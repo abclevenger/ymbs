@@ -29,6 +29,8 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [selectedNeeds, setSelectedNeeds] = useState<string[]>([]);
+  // The step-2 field unmounts on step 3; preserve the challenge in state.
+  const [challenge, setChallenge] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 
@@ -82,12 +84,8 @@ export default function Contact() {
     if (currentStep === 1 && selectedNeeds.length === 0) {
       newErrors.needs = "Please select at least one area you need help with.";
     }
-    if (currentStep === 2) {
-      const message = formData?.get("message") as string;
-      if (!message || message.trim().length < 10) {
-        newErrors.message =
-          "Please provide at least a brief description (10+ characters).";
-      }
+    if ((currentStep === 2 || currentStep === 3) && challenge.trim().length < 10) {
+      newErrors.message = "Please provide at least a brief description (10+ characters).";
     }
     if (currentStep === 3 && formData) {
       const firstName = formData.get("firstName") as string;
@@ -102,16 +100,11 @@ export default function Contact() {
   };
 
   const handleNext = (currentStep: number) => {
-    const formData =
-      currentStep === 2 || currentStep === 3
-        ? new FormData(document.querySelector("form") as HTMLFormElement)
-        : undefined;
-    if (validateStep(currentStep, formData)) {
-      track.assessmentFunnelStep(
-        "discovery_call",
-        `step_${currentStep}_complete`,
-      );
+    if (validateStep(currentStep)) {
+      track.assessmentFunnelStep("discovery_call", "step_" + currentStep + "_complete");
       setStep(currentStep + 1);
+    } else if (currentStep === 2) {
+      setTouched((prev) => ({ ...prev, message: true }));
     }
   };
 
@@ -175,7 +168,7 @@ export default function Contact() {
     const email = formData.get("email") as string;
     const phone = formData.get("phone") as string;
     const company = formData.get("company") as string;
-    const message = formData.get("message") as string;
+    const message = challenge.trim();
 
     const result = await submitLead({
       formId: "Multi-Step Contact Form",
@@ -206,7 +199,6 @@ export default function Contact() {
     }
 
     track.contactFormSubmitted(selectedNeeds.join(", "), undefined);
-    track.discoveryCallBooked(selectedNeeds.join(", "));
     setIsSubmitted(true);
   };
 
@@ -289,7 +281,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-24 bg-muted/20">
+      <section id="contact-form" className="py-16 md:py-20 bg-muted/20 scroll-mt-28">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-6">
             <TrustSignals variant="light" showRating={true} />
@@ -332,7 +324,7 @@ export default function Contact() {
                   </Link>
                 </div>
                 <p className="text-sm text-zinc-400 mt-6">
-                  A copy of your request has been sent to your email.
+                  We will contact you using the details you provided.
                 </p>
               </motion.div>
             ) : (
@@ -462,6 +454,8 @@ export default function Contact() {
                             <Textarea
                               id="message"
                               name="message"
+                              value={challenge}
+                              onChange={(e) => setChallenge(e.target.value)}
                               required
                               onBlur={(e) =>
                                 handleFieldBlur("message", e.target.value)
