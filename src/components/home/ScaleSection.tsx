@@ -11,31 +11,31 @@ const pillars = [
     id: "structure",
     letter: "S",
     name: "Structure",
-    desc: "We design the right structure for your mission.",
+    desc: "Clarify ownership, workflows, reporting, and the systems that support them.",
   },
   {
     id: "culture",
     letter: "C",
     name: "Culture",
-    desc: "We build a culture that lives your values.",
+    desc: "Strengthen trust, accountability, and the way teams work together.",
   },
   {
     id: "alignment",
     letter: "A",
     name: "Alignment",
-    desc: "We align people and priorities to move in the same direction.",
+    desc: "Connect priorities, resources, and teams to a shared direction.",
   },
   {
     id: "legal-governance",
     letter: "L",
-    name: "Legal & Governance",
-    desc: "We protect your mission with strong governance and compliance.",
+    name: "Liability & Governance",
+    desc: "We identify governance, compliance, and risk-readiness gaps so the right professionals can address them.",
   },
   {
     id: "execution",
     letter: "E",
     name: "Execution",
-    desc: "We create systems and processes that drive consistent results.",
+    desc: "Make commitments measurable and execution easier to sustain.",
   },
 ];
 
@@ -56,10 +56,10 @@ const RIBBON_HALF_W = 10; // half-width of each ribbon band
 const GOLD = "#D4A017";
 const GOLD_BRIGHT = "#F0C73A";
 const GOLD_HI = "#FFE08A";
-const NAVY_RIBBON = "#2C4E73";
-const NAVY_RIBBON_DARK = "#1A3450";
-const NAVY_HI = "#5A7BA3";
-const CREAM = "#EDE6D6";
+const NAVY_RIBBON = "#4D729A";
+const NAVY_RIBBON_DARK = "#294D73";
+const NAVY_HI = "#91B6D8";
+const CREAM = "#FFFFFF";
 
 /**
  * Generate a filled ribbon path (a band with real width) following a
@@ -240,10 +240,12 @@ export default function ScaleSection() {
               transition={{ duration: 0.7, delay: 0.18 }}
               className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-xl mb-8"
             >
-              SCALE&trade; is the operating system that aligns every part of
-              your organization&mdash;so you can lead with clarity, execute with
-              confidence, and create lasting impact.
+              SCALE&trade; is our business-readiness framework. Explore five connected
+              dimensions to see where your organization is strong, where friction
+              builds, and what may need attention first.
             </motion.p>
+
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/90 mb-3">Select a pillar to explore it in the DNA model</p>
 
             {/* Interactive pillar list */}
             <ul className="space-y-3">
@@ -305,7 +307,7 @@ export default function ScaleSection() {
             variants={helixContainerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="order-first lg:order-none flex justify-center"
+            className="flex justify-center"
           >
             <motion.div
               animate={reduce ? undefined : { y: [0, -7, 0] }}
@@ -314,13 +316,13 @@ export default function ScaleSection() {
                   ? undefined
                   : { duration: 7, repeat: Infinity, ease: "easeInOut" }
               }
-              className="w-full max-w-[380px]"
+              className="w-full max-w-[360px] sm:max-w-[410px]"
             >
               <svg
                 viewBox="0 0 320 500"
                 className="w-full h-auto"
                 role="group"
-                aria-label="SCALE DNA double helix — select a pillar to explore it."
+                aria-label="Interactive SCALE double helix with Structure, Culture, Alignment, Liability and Governance, and Execution; select a pillar to explore it."
               >
                 <defs>
                   {/* Gold ribbon — horizontal gradient for dimensional surface */}
@@ -532,16 +534,16 @@ export default function ScaleSection() {
                         textAnchor="middle"
                         dominantBaseline="middle"
                         fill={isActive ? GOLD_BRIGHT : CREAM}
-                        fontSize={isActive ? 10.5 : 9.5}
+                        fontSize={isActive ? 12 : 11}
                         fontWeight={700}
                         fontFamily="'Montserrat', sans-serif"
                         letterSpacing="0.04em"
                         style={{
-                          opacity: isActive ? 1 : 0.65,
+                          opacity: isActive ? 1 : 0.9,
                           transition: "all 0.3s ease",
                         }}
                       >
-                        {p.name.toUpperCase()}
+                        {p.letter === "L" ? "LIABILITY & GOV." : p.name.toUpperCase()}
                       </text>
                     </motion.g>
                   );
@@ -608,13 +610,20 @@ export default function ScaleSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
           transition={{ duration: 0.7, delay: 0.8 }}
-          className="text-center mt-8"
+          className="flex flex-wrap justify-center items-center gap-5 mt-8"
         >
           <Link
-            to="/scale"
-            className="text-sm font-bold inline-flex items-center gap-2 hover:gap-3 transition-all text-primary"
+            to="/scale/assessment"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-[#0B1D33] px-6 py-3 text-sm font-bold transition-colors hover:bg-[#FFE08A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
-            Explore the SCALE&trade; Framework{" "}
+            Take the SCALE&trade; Assessment
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <Link
+            to="/scale"
+            className="text-sm font-bold inline-flex items-center gap-2 hover:gap-3 transition-all text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
+            Explore the Framework
             <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>
