@@ -9,7 +9,8 @@ const proofPoints = [
   {
     icon: Users,
     label: "Senior expertise, on your terms.",
-    detail: "The right experience for a project, ongoing guidance, or hands-on support—without a full-time executive.",
+    detail:
+      "The right experience for a project, ongoing guidance, or hands-on support—without a full-time executive.",
   },
   {
     icon: ShieldCheck,
@@ -125,7 +126,8 @@ export default function HeroSection() {
               {/* CTA microcopy — each line sits directly beneath its button */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-4">
                 <p className="text-xs text-zinc-400 font-medium tracking-wide sm:flex-1 sm:max-w-[220px]">
-                  Request a 30-minute conversation. We’ll follow up to arrange it.
+                  Request a 30-minute conversation. We’ll follow up to arrange
+                  it.
                 </p>
                 <p className="text-xs text-zinc-400 font-medium tracking-wide sm:flex-1 sm:max-w-[260px]">
                   A practical starting point to identify where the organization
@@ -163,7 +165,11 @@ export default function HeroSection() {
                       <span className="text-lg lg:text-xl text-foreground font-medium leading-snug">
                         {label}
                       </span>
-                      {detail && <span className="text-sm text-zinc-600 leading-relaxed">{detail}</span>}
+                      {detail && (
+                        <span className="text-sm text-zinc-600 leading-relaxed">
+                          {detail}
+                        </span>
+                      )}
                     </span>
                   </li>
                 ))}
@@ -193,8 +199,14 @@ export default function HeroSection() {
                     <Icon className="w-4 h-4 text-primary" />
                   </span>
                   <span className="flex flex-col gap-1">
-                    <span className="text-sm text-foreground font-medium leading-snug">{label}</span>
-                    {detail && <span className="text-xs text-zinc-600 leading-snug">{detail}</span>}
+                    <span className="text-sm text-foreground font-medium leading-snug">
+                      {label}
+                    </span>
+                    {detail && (
+                      <span className="text-xs text-zinc-600 leading-snug">
+                        {detail}
+                      </span>
+                    )}
                   </span>
                 </li>
               ))}

@@ -18,8 +18,16 @@ describe("Shared YMBS site header and footer", () => {
   });
 
   it("routes blog header and footer links to the main YMBS domain", () => {
-    for (const path of ["/", "/contact", "/support", "/insights", "/scale/assessment"]) {
-      expect(resolveSiteHref(path, "blog.ymbs.pro")).toBe(`https://ymbs.pro${path}`);
+    for (const path of [
+      "/",
+      "/contact",
+      "/support",
+      "/insights",
+      "/scale/assessment",
+    ]) {
+      expect(resolveSiteHref(path, "blog.ymbs.pro")).toBe(
+        `https://ymbs.pro${path}`,
+      );
     }
   });
 
@@ -30,7 +38,11 @@ describe("Shared YMBS site header and footer", () => {
   });
 
   it("preserves non-internal destinations", () => {
-    expect(resolveSiteHref("mailto:info@ymbs.pro", "blog.ymbs.pro")).toBe("mailto:info@ymbs.pro");
-    expect(resolveSiteHref("https://example.com/", "blog.ymbs.pro")).toBe("https://example.com/");
+    expect(resolveSiteHref("mailto:info@ymbs.pro", "blog.ymbs.pro")).toBe(
+      "mailto:info@ymbs.pro",
+    );
+    expect(resolveSiteHref("https://example.com/", "blog.ymbs.pro")).toBe(
+      "https://example.com/",
+    );
   });
 });

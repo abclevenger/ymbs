@@ -32,7 +32,11 @@ export default function Contact() {
   // The step-2 field unmounts on step 3; preserve the challenge in state.
   const [challenge, setChallenge] = useState("");
   const [contactDetails, setContactDetails] = useState({
-    firstName: "", lastName: "", email: "", phone: "", company: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
@@ -87,8 +91,12 @@ export default function Contact() {
     if (currentStep === 1 && selectedNeeds.length === 0) {
       newErrors.needs = "Please select at least one area you need help with.";
     }
-    if ((currentStep === 2 || currentStep === 3) && challenge.trim().length < 10) {
-      newErrors.message = "Please provide at least a brief description (10+ characters).";
+    if (
+      (currentStep === 2 || currentStep === 3) &&
+      challenge.trim().length < 10
+    ) {
+      newErrors.message =
+        "Please provide at least a brief description (10+ characters).";
     }
     if (currentStep === 3 && formData) {
       const firstName = formData.get("firstName") as string;
@@ -104,7 +112,10 @@ export default function Contact() {
 
   const handleNext = (currentStep: number) => {
     if (validateStep(currentStep)) {
-      track.assessmentFunnelStep("discovery_call", "step_" + currentStep + "_complete");
+      track.assessmentFunnelStep(
+        "discovery_call",
+        "step_" + currentStep + "_complete",
+      );
       setStep(currentStep + 1);
     } else if (currentStep === 2) {
       setTouched((prev) => ({ ...prev, message: true }));
@@ -234,15 +245,22 @@ export default function Contact() {
             We'll help determine the right next step.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
-            <a href="#contact-form" className="rounded-full bg-primary text-[#0B1D33] px-7 py-3 font-bold hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+            <a
+              href="#contact-form"
+              className="rounded-full bg-primary text-[#0B1D33] px-7 py-3 font-bold hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
               Request a conversation
             </a>
-            <Link to="/scale/assessment" className="rounded-full border border-white/30 px-7 py-3 font-semibold text-white hover:border-primary hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+            <Link
+              to="/scale/assessment"
+              className="rounded-full border border-white/30 px-7 py-3 font-semibold text-white hover:border-primary hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
               Not sure yet? Take SCALE™
             </Link>
           </div>
           <p className="text-sm text-white/60 mt-4">
-            The form is a conversation request, not an instant appointment booking.
+            The form is a conversation request, not an instant appointment
+            booking.
           </p>
         </div>
       </section>
@@ -295,7 +313,10 @@ export default function Contact() {
         </div>
       </section>
 
-      <section id="contact-form" className="py-16 md:py-20 bg-muted/20 scroll-mt-28">
+      <section
+        id="contact-form"
+        className="py-16 md:py-20 bg-muted/20 scroll-mt-28"
+      >
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-6">
             <TrustSignals variant="light" showRating={true} />
@@ -315,8 +336,8 @@ export default function Contact() {
                   Request Received
                 </h3>
                 <p className="text-lg text-muted-foreground max-w-md mb-8">
-                  Your inquiry was submitted. We'll use the contact information you
-                  provided to follow up about the next step.
+                  Your inquiry was submitted. We'll use the contact information
+                  you provided to follow up about the next step.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
@@ -533,7 +554,12 @@ export default function Contact() {
                               id="firstName"
                               name="firstName"
                               value={contactDetails.firstName}
-                              onChange={(e) => setContactDetails((prev) => ({ ...prev, firstName: e.target.value }))}
+                              onChange={(e) =>
+                                setContactDetails((prev) => ({
+                                  ...prev,
+                                  firstName: e.target.value,
+                                }))
+                              }
                               required
                               autoComplete="given-name"
                               placeholder="John"
@@ -555,7 +581,12 @@ export default function Contact() {
                               id="lastName"
                               name="lastName"
                               value={contactDetails.lastName}
-                              onChange={(e) => setContactDetails((prev) => ({ ...prev, lastName: e.target.value }))}
+                              onChange={(e) =>
+                                setContactDetails((prev) => ({
+                                  ...prev,
+                                  lastName: e.target.value,
+                                }))
+                              }
                               required
                               autoComplete="family-name"
                               placeholder="Doe"
@@ -568,7 +599,12 @@ export default function Contact() {
                             id="email"
                             name="email"
                             value={contactDetails.email}
-                            onChange={(e) => setContactDetails((prev) => ({ ...prev, email: e.target.value }))}
+                            onChange={(e) =>
+                              setContactDetails((prev) => ({
+                                ...prev,
+                                email: e.target.value,
+                              }))
+                            }
                             type="email"
                             required
                             autoComplete="email"
@@ -592,7 +628,12 @@ export default function Contact() {
                               id="phone"
                               name="phone"
                               value={contactDetails.phone}
-                              onChange={(e) => setContactDetails((prev) => ({ ...prev, phone: e.target.value }))}
+                              onChange={(e) =>
+                                setContactDetails((prev) => ({
+                                  ...prev,
+                                  phone: e.target.value,
+                                }))
+                              }
                               type="tel"
                               autoComplete="tel"
                               inputMode="tel"
@@ -605,7 +646,12 @@ export default function Contact() {
                               id="company"
                               name="company"
                               value={contactDetails.company}
-                              onChange={(e) => setContactDetails((prev) => ({ ...prev, company: e.target.value }))}
+                              onChange={(e) =>
+                                setContactDetails((prev) => ({
+                                  ...prev,
+                                  company: e.target.value,
+                                }))
+                              }
                               autoComplete="organization"
                               placeholder="Acme Corp"
                             />
@@ -691,11 +737,14 @@ export default function Contact() {
               <p className="text-sm font-bold text-zinc-900 mb-1">
                 Response Time
               </p>
-              <p className="text-xs text-zinc-500">We follow up on submitted inquiries</p>
+              <p className="text-xs text-zinc-500">
+                We follow up on submitted inquiries
+              </p>
             </div>
           </div>
           <p className="text-center mt-8 text-sm text-zinc-500">
-            No obligation. No hard pitch. Your details are used to respond to your request.
+            No obligation. No hard pitch. Your details are used to respond to
+            your request.
           </p>
         </div>
       </section>

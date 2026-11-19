@@ -3,12 +3,24 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { whoWeHelp } from "@/components/layout/navData";
 
-const source = (path: string) => readFileSync(join(process.cwd(), path), "utf8");
+const source = (path: string) =>
+  readFileSync(join(process.cwd(), path), "utf8");
 
 describe("YMBS homepage conversion guardrails", () => {
   it("keeps the core story, disciplines, deliverables, SCALE and final CTA", () => {
     const home = source("src/pages/Index.tsx");
-    for (const component of ["HeroSection", "BusinessTransformationStory", "FourDisciplines", "WhoWeServe", "ProblemDiscovery", "HowWeWork", "Deliverables", "ScaleSection", "TeamSection", "FinalCta"]) {
+    for (const component of [
+      "HeroSection",
+      "BusinessTransformationStory",
+      "FourDisciplines",
+      "WhoWeServe",
+      "ProblemDiscovery",
+      "HowWeWork",
+      "Deliverables",
+      "ScaleSection",
+      "TeamSection",
+      "FinalCta",
+    ]) {
       expect(home).toContain("<" + component + " ");
     }
     expect(home).not.toContain("<SelfIdentification");
@@ -45,7 +57,9 @@ describe("YMBS homepage conversion guardrails", () => {
 
   it("keeps client-facing labels accurate", () => {
     expect(source("src/components/layout/Header.tsx")).toContain("Help Center");
-    expect(source("src/pages/ClientResults.tsx")).toContain("Our Experience & Deliverables");
+    expect(source("src/pages/ClientResults.tsx")).toContain(
+      "Our Experience & Deliverables",
+    );
     expect(source("src/components/TrustSignals.tsx")).not.toContain("<Star");
   });
 });

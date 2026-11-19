@@ -240,12 +240,14 @@ export default function ScaleSection() {
               transition={{ duration: 0.7, delay: 0.18 }}
               className="text-base md:text-lg text-zinc-300 leading-relaxed max-w-xl mb-8"
             >
-              SCALE&trade; is our business-readiness framework. Explore five connected
-              dimensions to see where your organization is strong, where friction
-              builds, and what may need attention first.
+              SCALE&trade; is our business-readiness framework. Explore five
+              connected dimensions to see where your organization is strong,
+              where friction builds, and what may need attention first.
             </motion.p>
 
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/90 mb-3">Select a pillar to explore it in the DNA model</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/90 mb-3">
+              Select a pillar to explore it in the DNA model
+            </p>
 
             {/* Interactive pillar list */}
             <ul className="space-y-3">
@@ -543,7 +545,9 @@ export default function ScaleSection() {
                           transition: "all 0.3s ease",
                         }}
                       >
-                        {p.letter === "L" ? "LIABILITY & GOV." : p.name.toUpperCase()}
+                        {p.letter === "L"
+                          ? "LIABILITY & GOV."
+                          : p.name.toUpperCase()}
                       </text>
                     </motion.g>
                   );

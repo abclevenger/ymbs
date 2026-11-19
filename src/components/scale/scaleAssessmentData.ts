@@ -137,17 +137,28 @@ export function restoreScaleDraft(raw: unknown): {
   const source = raw as Record<string, unknown>;
   const answers: Record<string, Answer[]> = {};
   let answered = 0;
-  let firstMissing: { pillarIndex: number; questionIndex: number } | null = null;
+  let firstMissing: { pillarIndex: number; questionIndex: number } | null =
+    null;
 
   for (let pillarIndex = 0; pillarIndex < pillars.length; pillarIndex++) {
     const pillar = pillars[pillarIndex];
     const stored = source[pillar.letter];
     const values: Answer[] = [];
     if (Array.isArray(stored)) {
-      for (let j = 0; j < Math.min(stored.length, pillar.questions.length); j++) {
+      for (
+        let j = 0;
+        j < Math.min(stored.length, pillar.questions.length);
+        j++
+      ) {
         const candidate: unknown = stored[j];
         // Invalid values and sparse entries must not count as answered.
-        if (typeof candidate !== "number" || !Number.isInteger(candidate) || candidate < 0 || candidate > 4) break;
+        if (
+          typeof candidate !== "number" ||
+          !Number.isInteger(candidate) ||
+          candidate < 0 ||
+          candidate > 4
+        )
+          break;
         values.push(candidate as Answer);
       }
     }
@@ -162,7 +173,9 @@ export function restoreScaleDraft(raw: unknown): {
   return {
     answers,
     pillarIndex: firstMissing?.pillarIndex ?? pillars.length - 1,
-    questionIndex: firstMissing?.questionIndex ?? pillars[pillars.length - 1].questions.length - 1,
+    questionIndex:
+      firstMissing?.questionIndex ??
+      pillars[pillars.length - 1].questions.length - 1,
     complete: firstMissing === null,
   };
 }

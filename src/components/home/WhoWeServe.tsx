@@ -5,7 +5,10 @@ import { whoWeHelp } from "@/components/layout/navData";
 /** Match the five primary navigation audiences using a single source of truth. */
 export default function WhoWeServe() {
   return (
-    <section className="py-14 md:py-20 bg-light-section" aria-labelledby="who-we-serve-heading">
+    <section
+      className="py-14 md:py-20 bg-light-section"
+      aria-labelledby="who-we-serve-heading"
+    >
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="text-center mb-9 max-w-3xl mx-auto">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary mb-3">
@@ -19,8 +22,9 @@ export default function WhoWeServe() {
             Built for the organizations that keep America moving.
           </h2>
           <p className="text-base md:text-lg text-zinc-600 leading-relaxed">
-            Whether you lead a growing business, professional practice, nonprofit, or
-            purpose-led organization, we help you bring the right expertise to your next priority.
+            Whether you lead a growing business, professional practice,
+            nonprofit, or purpose-led organization, we help you bring the right
+            expertise to your next priority.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
@@ -36,9 +40,12 @@ export default function WhoWeServe() {
               >
                 {audience.title}
               </h3>
-              <p className="text-sm text-zinc-600 leading-relaxed flex-1">{audience.description}</p>
+              <p className="text-sm text-zinc-600 leading-relaxed flex-1">
+                {audience.description}
+              </p>
               <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-[#8C6700] group-hover:underline">
-                See how we help <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+                See how we help{" "}
+                <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
               </span>
             </Link>
           ))}

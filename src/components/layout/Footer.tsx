@@ -25,7 +25,6 @@ export function Footer() {
                 className="w-full h-auto object-contain"
               />
             </div>
-
           </div>
 
           {/* Company */}
@@ -43,17 +42,26 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href={mainSiteHref("/client-results")} className="hover:text-primary">
+                <a
+                  href={mainSiteHref("/client-results")}
+                  className="hover:text-primary"
+                >
                   Experience & Deliverables
                 </a>
               </li>
               <li>
-                <a href={mainSiteHref("/insights")} className="hover:text-primary">
+                <a
+                  href={mainSiteHref("/insights")}
+                  className="hover:text-primary"
+                >
                   Insights
                 </a>
               </li>
               <li>
-                <a href={mainSiteHref("/contact")} className="hover:text-primary">
+                <a
+                  href={mainSiteHref("/contact")}
+                  className="hover:text-primary"
+                >
                   Contact
                 </a>
               </li>
@@ -64,11 +72,46 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-3 text-white text-sm">Who We Help</h4>
             <ul className="space-y-1.5 text-xs text-white/60">
-              <li><a href={mainSiteHref("/services")} className="hover:text-primary">Small &amp; Mid-Sized Businesses</a></li>
-              <li><a href={mainSiteHref("/professional-services")} className="hover:text-primary">Professional Services Firms</a></li>
-              <li><a href={mainSiteHref("/law-firm-technology")} className="hover:text-primary">Law Firms</a></li>
-              <li><a href={mainSiteHref("/nonprofit-consulting")} className="hover:text-primary">Nonprofits</a></li>
-              <li><a href={mainSiteHref("/mission-driven-organizations")} className="hover:text-primary">Mission-Driven Organizations</a></li>
+              <li>
+                <a
+                  href={mainSiteHref("/services")}
+                  className="hover:text-primary"
+                >
+                  Small &amp; Mid-Sized Businesses
+                </a>
+              </li>
+              <li>
+                <a
+                  href={mainSiteHref("/professional-services")}
+                  className="hover:text-primary"
+                >
+                  Professional Services Firms
+                </a>
+              </li>
+              <li>
+                <a
+                  href={mainSiteHref("/law-firm-technology")}
+                  className="hover:text-primary"
+                >
+                  Law Firms
+                </a>
+              </li>
+              <li>
+                <a
+                  href={mainSiteHref("/nonprofit-consulting")}
+                  className="hover:text-primary"
+                >
+                  Nonprofits
+                </a>
+              </li>
+              <li>
+                <a
+                  href={mainSiteHref("/mission-driven-organizations")}
+                  className="hover:text-primary"
+                >
+                  Mission-Driven Organizations
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -77,12 +120,18 @@ export function Footer() {
             <h4 className="font-bold mb-3 text-white text-sm">Capabilities</h4>
             <ul className="space-y-1.5 text-xs text-white/60">
               <li>
-                <a href={mainSiteHref("/services/operations")} className="hover:text-primary">
+                <a
+                  href={mainSiteHref("/services/operations")}
+                  className="hover:text-primary"
+                >
                   Operations
                 </a>
               </li>
               <li>
-                <a href={mainSiteHref("/services/technology")} className="hover:text-primary">
+                <a
+                  href={mainSiteHref("/services/technology")}
+                  className="hover:text-primary"
+                >
                   Technology
                 </a>
               </li>
@@ -95,7 +144,10 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href={mainSiteHref("/services/leadership")} className="hover:text-primary">
+                <a
+                  href={mainSiteHref("/services/leadership")}
+                  className="hover:text-primary"
+                >
                   Leadership
                 </a>
               </li>
@@ -123,7 +175,10 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href={mainSiteHref("/contact")} className="hover:text-primary font-medium">
+                <a
+                  href={mainSiteHref("/contact")}
+                  className="hover:text-primary font-medium"
+                >
                   Get Clarity
                 </a>
               </li>
@@ -136,13 +191,19 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href={mainSiteHref("/scale/assessment")} className="hover:text-primary">
+                <a
+                  href={mainSiteHref("/scale/assessment")}
+                  className="hover:text-primary"
+                >
                   SCALE&trade; Assessment
                 </a>
               </li>
 
               <li>
-                <a href={mainSiteHref("/support")} className="hover:text-primary">
+                <a
+                  href={mainSiteHref("/support")}
+                  className="hover:text-primary"
+                >
                   Help Center
                 </a>
               </li>
@@ -235,7 +296,10 @@ export function Footer() {
             <a href={mainSiteHref("/terms")} className="hover:text-primary">
               Terms
             </a>
-            <a href={mainSiteHref("/accessibility")} className="hover:text-primary">
+            <a
+              href={mainSiteHref("/accessibility")}
+              className="hover:text-primary"
+            >
               Accessibility
             </a>
             <a href={mainSiteHref("/sitemap")} className="hover:text-primary">

@@ -250,14 +250,24 @@ describe("Route Sync — Edge Function ↔ routes.ts", () => {
 });
 
 describe("Route Sync — Deployed Cloudflare Worker source", () => {
-  const source = readFileSync(join(process.cwd(), "cloudflare", "edge-routing-worker.js"), "utf-8");
+  const source = readFileSync(
+    join(process.cwd(), "cloudflare", "edge-routing-worker.js"),
+    "utf-8",
+  );
   const extractArray = (name: string): string[] => {
-    const match = source.match(new RegExp(`const ${name}\\s*=\\s*\\[([^\\]]+)\\]`, "s"));
-    return (match?.[1].match(/["']([^"']+)["']/g) ?? []).map((v) => v.slice(1, -1));
+    const match = source.match(
+      new RegExp(`const ${name}\\s*=\\s*\\[([^\\]]+)\\]`, "s"),
+    );
+    return (match?.[1].match(/["']([^"']+)["']/g) ?? []).map((v) =>
+      v.slice(1, -1),
+    );
   };
   const extractRedirects = (): Record<string, string> => {
-    const body = source.match(/const legacyRedirects = \{([\s\S]*?)\n\};/)?.[1] ?? "";
-    const entries = [...body.matchAll(/["']([^"']+)["']\s*:\s*["']([^"']+)["']/g)];
+    const body =
+      source.match(/const legacyRedirects = \{([\s\S]*?)\n\};/)?.[1] ?? "";
+    const entries = [
+      ...body.matchAll(/["']([^"']+)["']\s*:\s*["']([^"']+)["']/g),
+    ];
     return Object.fromEntries(entries.map(([, key, value]) => [key, value]));
   };
 
@@ -270,7 +280,9 @@ describe("Route Sync — Deployed Cloudflare Worker source", () => {
   });
 
   it("Worker preserves hosting endpoints and non-page HTTP methods", () => {
-    expect(source).toContain('request.method !== "GET" && request.method !== "HEAD"');
+    expect(source).toContain(
+      'request.method !== "GET" && request.method !== "HEAD"',
+    );
     for (const prefix of ["/__vibe/", "/cdn-cgi/", "/.well-known/"]) {
       expect(source).toContain(prefix);
     }

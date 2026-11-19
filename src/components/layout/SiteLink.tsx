@@ -5,7 +5,10 @@ const MAIN_SITE = "https://ymbs.pro";
 
 /** Blog lives on a separate hostname; navigation always points to main site. */
 export function isBlogSubdomain(): boolean {
-  return typeof window !== "undefined" && window.location.hostname === "blog.ymbs.pro";
+  return (
+    typeof window !== "undefined" &&
+    window.location.hostname === "blog.ymbs.pro"
+  );
 }
 
 /** Pure route helper: blog navigation resolves to the canonical YMBS domain. */

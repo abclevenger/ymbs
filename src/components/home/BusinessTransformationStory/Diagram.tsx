@@ -47,7 +47,6 @@ const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 export default function Diagram({ p, reduced, small }: DiagramProps) {
   const [active, setActive] = useState<DisciplineId | null>(null);
 
-
   // ---- Derived animation values ----
   const strain =
     smoothstep(mapRange(p, 0.2, 0.36)) *
@@ -298,7 +297,9 @@ export default function Diagram({ p, reduced, small }: DiagramProps) {
                 // Blur filters are expensive on mobile GPUs. Keep the
                 // diagnostic contrast through opacity without a blur pass.
                 filter={small ? undefined : "url(#story-fog)"}
-                opacity={small ? lerp(0.55, 1, clarity) : lerp(0.85, 1, clarity)}
+                opacity={
+                  small ? lerp(0.55, 1, clarity) : lerp(0.85, 1, clarity)
+                }
               >
                 {renderScene("fog")}
               </g>

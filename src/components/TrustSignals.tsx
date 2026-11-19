@@ -58,7 +58,8 @@ export function TrustSignals({
         >
           <Users className="w-4 h-4 shrink-0" aria-hidden="true" />
           <p className="text-xs text-center max-w-md">
-            No obligation. No hard pitch. We use your details to follow up on your request.
+            No obligation. No hard pitch. We use your details to follow up on
+            your request.
           </p>
         </div>
       )}

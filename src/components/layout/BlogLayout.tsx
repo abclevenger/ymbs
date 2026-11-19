@@ -7,7 +7,10 @@ import { Footer } from "@/components/layout/Footer";
  * Article content and SEO metadata remain the responsibility of each page.
  */
 export function isBlogHost(): boolean {
-  return typeof window !== "undefined" && window.location.hostname === "blog.ymbs.pro";
+  return (
+    typeof window !== "undefined" &&
+    window.location.hostname === "blog.ymbs.pro"
+  );
 }
 
 export default function BlogLayout({
