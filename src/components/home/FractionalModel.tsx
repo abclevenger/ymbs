@@ -85,9 +85,10 @@ export default function FractionalModel() {
               ))}
             </ul>
             <p className="text-base md:text-lg text-zinc-600 leading-relaxed border-t border-zinc-200 pt-6">
-              We've stepped into organizations facing culture breakdowns,
-              operational chaos, HR compliance gaps, and leadership misalignment
-              — and fixed them.
+              Our specialists bring experience in organizational change,
+              operational challenges, HR compliance readiness, leadership
+              alignment, and strategic communications. We start by understanding
+              your priorities before recommending a scope of work.
             </p>
           </motion.div>
         </div>
