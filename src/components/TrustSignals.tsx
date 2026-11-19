@@ -1,4 +1,4 @@
-import { Shield, Users, Star } from "lucide-react";
+import { Shield, Users } from "lucide-react";
 
 interface TrustSignalsProps {
   variant?: "light" | "dark";
@@ -24,11 +24,6 @@ export function TrustSignals({
         <div
           className={`flex items-center justify-center gap-2 ${compact ? "mb-3" : "mb-5"} ${isDark ? "text-white" : "text-[#1A2433]"}`}
         >
-          <div className="flex gap-0.5" aria-hidden="true">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-            ))}
-          </div>
           <span
             className={`text-sm font-medium ${isDark ? "text-white/70" : "text-zinc-500"}`}
           >
@@ -63,8 +58,7 @@ export function TrustSignals({
         >
           <Users className="w-4 h-4 shrink-0" aria-hidden="true" />
           <p className="text-xs text-center max-w-md">
-            No obligation. No hard pitch. Just clarity. Your information is
-            never shared.
+            No obligation. No hard pitch. We use your details to follow up on your request.
           </p>
         </div>
       )}
