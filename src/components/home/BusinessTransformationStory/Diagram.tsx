@@ -47,10 +47,6 @@ const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 export default function Diagram({ p, reduced, small }: DiagramProps) {
   const [active, setActive] = useState<DisciplineId | null>(null);
 
-  // Clear selection when scrolling back before the interactive finale.
-  useEffect(() => {
-    if (p < 0.88) setActive(null);
-  }, [p]);
 
   // ---- Derived animation values ----
   const strain =
@@ -63,6 +59,12 @@ export default function Diagram({ p, reduced, small }: DiagramProps) {
   const scaleAppear = smoothstep(mapRange(p, 0.76, 0.9));
   const minorFade = lerp(1, 0.6, smoothstep(mapRange(p, 0.82, 0.95)));
   const interactive = p >= 0.88;
+
+  // Reset selection only when crossing back out of the finale,
+  // not on every scroll animation frame.
+  useEffect(() => {
+    if (!interactive) setActive(null);
+  }, [interactive]);
 
   // Clarity lens
   const clarity = smoothstep(mapRange(p, 0.46, 0.62));
