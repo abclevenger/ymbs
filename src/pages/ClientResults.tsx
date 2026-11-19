@@ -155,30 +155,32 @@ export default function ClientResults() {
           </div>
         </section>
 
-        {/* TRANSFORMATIONS */}
-        <section className="py-20 bg-white border-y border-zinc-200">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="text-center mb-12">
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4 text-[#1A2433]"
-                style={serif}
-              >
-                The Kind of Change We Work Toward
-              </h2>
-              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                Examples of the type of transformation YMBS works toward—not
-                guaranteed outcomes.
-              </p>
+        {/* TRANSFORMATIONS (shown only when verified examples exist) */}
+        {VERIFIED_TRANSFORMATIONS.some((t) => t.verified) && (
+          <section className="py-20 bg-white border-y border-zinc-200">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="text-center mb-12">
+                <h2
+                  className="text-3xl md:text-4xl font-bold mb-4 text-[#1A2433]"
+                  style={serif}
+                >
+                  The Kind of Change We Work Toward
+                </h2>
+                <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+                  Examples of the type of transformation YMBS works toward—not
+                  guaranteed outcomes.
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                {VERIFIED_TRANSFORMATIONS.filter((t) => t.verified).map(
+                  (t, i) => (
+                    <BeforeAfter key={i} data={t} variant="light" />
+                  ),
+                )}
+              </div>
             </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              {VERIFIED_TRANSFORMATIONS.filter((t) => t.verified).map(
-                (t, i) => (
-                  <BeforeAfter key={i} data={t} variant="light" />
-                ),
-              )}
-            </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* OUTCOMES (empty until verified) */}
         {VERIFIED_OUTCOMES.length > 0 && (
