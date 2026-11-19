@@ -95,16 +95,17 @@ export function Header() {
             to="/support"
             className="hover:text-primary transition-colors font-medium text-primary"
           >
-            Client Portal
+            Help Center
           </Link>
           <span className="text-white/30">|</span>
           <a
             href="https://app.ymbs.pro"
+            title="Sign in to the separate Elevation platform"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors font-medium text-primary"
           >
-            Elevation Login
+            Elevation Sign-In
           </a>
           <span className="text-white/30">|</span>
           <a
