@@ -3,7 +3,7 @@
  * section: diagnostic clarity lens, strain pressure points, migrating
  * concern threads, discipline compass, SCALE™ ring, and coordinated flow.
  */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   disciplines,
   fragmentNodes,
@@ -46,6 +46,11 @@ const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
 export default function Diagram({ p, reduced, small }: DiagramProps) {
   const [active, setActive] = useState<DisciplineId | null>(null);
+
+  // Clear selection when scrolling back before the interactive finale.
+  useEffect(() => {
+    if (p < 0.88) setActive(null);
+  }, [p]);
 
   // ---- Derived animation values ----
   const strain =
@@ -287,7 +292,12 @@ export default function Diagram({ p, reduced, small }: DiagramProps) {
         <g aria-hidden="true">
           {fogged ? (
             <>
-              <g filter="url(#story-fog)" opacity={lerp(0.85, 1, clarity)}>
+              <g
+                // Blur filters are expensive on mobile GPUs. Keep the
+                // diagnostic contrast through opacity without a blur pass.
+                filter={small ? undefined : "url(#story-fog)"}
+                opacity={small ? lerp(0.55, 1, clarity) : lerp(0.85, 1, clarity)}
+              >
                 {renderScene("fog")}
               </g>
               <g clipPath="url(#story-lens)">
