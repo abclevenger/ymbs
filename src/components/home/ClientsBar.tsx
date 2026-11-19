@@ -74,13 +74,13 @@ export default function ClientsBar() {
             {CLIENTS.map((client) => (
               <div
                 key={client.name}
-                className="flex items-center justify-center h-16 md:h-20 w-full max-w-[220px] transition-opacity duration-200 group-hover:opacity-70"
+                className="flex items-center justify-center h-16 md:h-20 w-full max-w-[220px] rounded-lg bg-white/80 border border-black/5 shadow-sm px-3 transition-opacity duration-200 group-hover:opacity-70"
               >
                 <img
                   src={client.src}
                   alt={client.alt}
                   loading="lazy"
-                  className="max-h-full max-w-full object-contain opacity-75 group-hover:opacity-100 transition-opacity duration-200"
+                  className="max-h-full max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-200"
                 />
               </div>
             ))}
