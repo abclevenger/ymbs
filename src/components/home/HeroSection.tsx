@@ -124,7 +124,7 @@ export default function HeroSection() {
               {/* CTA microcopy — each line sits directly beneath its button */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-4">
                 <p className="text-xs text-zinc-400 font-medium tracking-wide sm:flex-1 sm:max-w-[220px]">
-                  30 minutes • No obligation • Leave with clearer priorities
+                  Request a 30-minute conversation. We’ll follow up to arrange it.
                 </p>
                 <p className="text-xs text-zinc-400 font-medium tracking-wide sm:flex-1 sm:max-w-[260px]">
                   A practical starting point to identify where the organization
