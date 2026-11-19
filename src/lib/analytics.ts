@@ -18,7 +18,6 @@ type GA4Event =
   | "cta_exposure"
   | "assessment_funnel_step"
   | "exit_intent"
-  | "social_proof_viewed"
   | "sticky_cta_viewed";
 
 interface EventParams {
@@ -153,7 +152,6 @@ export const track = {
     }),
   exitIntent: (label: string) =>
     trackEvent("exit_intent", { cta_label: label }),
-  socialProofViewed: () => trackEvent("social_proof_viewed"),
   stickyCtaViewed: () => trackEvent("sticky_cta_viewed"),
 };
 

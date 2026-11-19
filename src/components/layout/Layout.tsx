@@ -3,7 +3,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import StickyCTA from "@/components/StickyCTA";
 import ExitIntentModal from "@/components/ExitIntentModal";
-import SocialProofToast from "@/components/SocialProofToast";
 import { useBreadcrumbSchema } from "@/lib/schema";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -27,7 +26,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Footer />
       {/* CRO Layer */}
       <StickyCTA />
-      <SocialProofToast />
       <ExitIntentModal />
     </div>
   );
