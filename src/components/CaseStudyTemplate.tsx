@@ -197,6 +197,17 @@ export default function CaseStudyTemplate({ data }: { data: CaseStudyData }) {
         </motion.div>
       </section>
 
+      {/* CONTEXT NOTE — example vs. actual engagement */}
+      <section className="py-6 bg-light-section border-y border-zinc-200">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-sm text-zinc-500 leading-relaxed text-center">
+            Representative engagement example. Details may be generalized to
+            protect client confidentiality. Outcomes shown reflect the type of
+            work YMBS performs and are not a guarantee of specific results.
+          </p>
+        </div>
+      </section>
+
       {/* RESULTS */}
       <section className="py-20 bg-white border-y border-zinc-200">
         <motion.div

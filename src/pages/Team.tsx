@@ -21,7 +21,7 @@ export default function Team() {
         "Accountability Systems",
       ],
       outcome:
-        "Recovered $2M+ in operational waste across growing organizations.",
+        "Helps organizations recover operational capacity hidden inside inefficient processes.",
       emotional: "Built to bring order where growth created complexity.",
       link: "/thania-clevenger",
     },
@@ -41,7 +41,7 @@ export default function Team() {
         "SEO & Digital Systems",
       ],
       outcome:
-        "Built growth and technology systems driving 7-figure expansion.",
+        "Builds growth and technology systems designed to scale revenue without proportional overhead.",
       emotional: "Turns technology from overhead into advantage.",
       link: "/ashley-clevenger",
     },

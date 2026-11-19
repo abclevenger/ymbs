@@ -177,15 +177,24 @@ export default function AshleyClevenger() {
 
             <div className="grid sm:grid-cols-3 gap-4 mt-12">
               {[
-                { stat: "21+", label: "Years in technology" },
-                { stat: "100+", label: "Systems improved" },
-                { stat: "7-figure", label: "Expansion systems built" },
+                {
+                  stat: "Coast Guard",
+                  label: "Mission-critical systems background",
+                },
+                {
+                  stat: "Vendor-neutral",
+                  label: "Technology advisory approach",
+                },
+                {
+                  stat: "Implements",
+                  label: "Doesn't just recommend—builds & trains",
+                },
               ].map((s, i) => (
                 <div
                   key={i}
                   className="bg-white/5 rounded-2xl p-6 border border-white/10 text-center"
                 >
-                  <p className="text-3xl font-bold text-primary mb-1">
+                  <p className="text-2xl font-bold text-primary mb-1">
                     {s.stat}
                   </p>
                   <p className="text-sm text-zinc-400 font-medium">{s.label}</p>

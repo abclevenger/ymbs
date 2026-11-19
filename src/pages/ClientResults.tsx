@@ -155,6 +155,108 @@ export default function ClientResults() {
           </div>
         </section>
 
+        {/* ILLUSTRATIVE DELIVERABLES — methods & example work products */}
+        <section className="py-20 bg-white border-y border-zinc-200">
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2
+                className="text-3xl md:text-4xl font-bold mb-4 text-[#1A2433]"
+                style={serif}
+              >
+                What a YMBS Engagement Produces
+              </h2>
+              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+                Illustrative deliverables and methods—examples of the work
+                product an engagement produces. These are representative, not
+                tied to a specific named client.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                {
+                  discipline: "Operations",
+                  items: [
+                    "Documented SOPs and process maps",
+                    "Governance framework with clear decision rights",
+                    "Board-ready reporting structure",
+                    "Compliance-ready documentation",
+                  ],
+                },
+                {
+                  discipline: "Technology",
+                  items: [
+                    "Living Technology Record inventory",
+                    "Vendor-neutral technology roadmap",
+                    "CRM / workflow buildout",
+                    "Cybersecurity risk review",
+                  ],
+                },
+                {
+                  discipline: "Communications",
+                  items: [
+                    "Messaging framework",
+                    "Stakeholder communication plan",
+                    "Crisis response playbook",
+                    "Executive briefing prep",
+                  ],
+                },
+                {
+                  discipline: "Leadership",
+                  items: [
+                    "Strategic planning framework",
+                    "Accountability and decision-rights map",
+                    "Change leadership plan",
+                    "Executive alignment sessions",
+                  ],
+                },
+                {
+                  discipline: "Assessment",
+                  items: [
+                    "SCALE™ readiness scorecard",
+                    "Priority action roadmap",
+                    "Pillar-by-pillar findings",
+                    "Recommended next steps",
+                  ],
+                },
+                {
+                  discipline: "Engagement",
+                  items: [
+                    "Project-based implementation",
+                    "Fractional executive support",
+                    "Ongoing advisory",
+                    "Diagnostic assessment",
+                  ],
+                },
+              ].map((group, i) => (
+                <div
+                  key={i}
+                  className="bg-light-section rounded-2xl p-6 border border-zinc-200"
+                >
+                  <h3 className="text-sm font-bold text-primary uppercase tracking-wider mb-4">
+                    {group.discipline}
+                  </h3>
+                  <ul className="space-y-2">
+                    {group.items.map((item, j) => (
+                      <li
+                        key={j}
+                        className="flex items-start gap-2 text-sm text-zinc-700 leading-snug"
+                      >
+                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-sm text-zinc-500 italic mt-8 max-w-2xl mx-auto">
+              Example work products shown for illustration. Actual deliverables
+              depend on the organization, scope, and priorities of each
+              engagement.
+            </p>
+          </div>
+        </section>
+
         {/* TRANSFORMATIONS (shown only when verified examples exist) */}
         {VERIFIED_TRANSFORMATIONS.some((t) => t.verified) && (
           <section className="py-20 bg-white border-y border-zinc-200">

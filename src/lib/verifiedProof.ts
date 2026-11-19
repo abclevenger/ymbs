@@ -66,7 +66,7 @@ export const VERIFIED_FRAMEWORKS = [
     name: "Living Technology Record",
     owner: "Ashley Clevenger",
     description:
-      "A structured, maintained record of every technology asset, vendor, contract, renewal date, integration, and cost—so technology decisions are made with full visibility.",
+      "A structured, maintained record of every technology asset, vendor, contract, renewal date, integration, and cost—so technology decisions are made with full visibility. In plain terms: a living inventory that shows exactly what the organization owns, what it pays, and when contracts renew, kept current instead of discovered during a crisis.",
     link: "/services/technology",
     linkText: "Explore Technology Advisory",
     status: "published" as const,

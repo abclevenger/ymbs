@@ -520,11 +520,12 @@ export default function Leadership() {
               Compass 16
             </h2>
             <p className="text-lg text-zinc-600 mb-6 max-w-2xl mx-auto leading-relaxed">
-              Just as Technology has the Living Technology Record and
-              Communications has V.I.T.A.L.™, Leadership at YMBS is built on
-              Compass 16—a structured framework for building leadership systems
-              that turn alignment into accountability and strategy into
-              execution.
+              Just as Technology has the Living Technology Record—a maintained
+              inventory of every technology asset, vendor, contract, and cost so
+              decisions aren't made blind—and Communications has V.I.T.A.L.™,
+              Leadership at YMBS is built on Compass 16—a structured framework
+              for building leadership systems that turn alignment into
+              accountability and strategy into execution.
             </p>
             {/* COPY NEEDED — MICHELLE / NESTOR: Confirm Compass 16 description, structure, and how the 16 points map to leadership dimensions */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">

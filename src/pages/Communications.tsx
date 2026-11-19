@@ -375,6 +375,14 @@ export default function Communications() {
               Communications within the integrated YMBS model
             </h2>
             <p className="text-lg text-zinc-600 mb-6 max-w-2xl mx-auto leading-relaxed">
+              Leadership may have one vision, but Sales, Operations, and other
+              departments sometimes communicate different versions of it. When
+              teams speak past each other, trust erodes, execution drifts, and
+              customers feel the inconsistency. YMBS helps align messaging,
+              customer experience, and execution around a consistent
+              organizational direction.
+            </p>
+            <p className="text-lg text-zinc-600 mb-6 max-w-2xl mx-auto leading-relaxed">
               A leadership decision may become a communications problem. An
               organizational restructure needs operations, communications, and
               leadership working together. YMBS looks across the organization
