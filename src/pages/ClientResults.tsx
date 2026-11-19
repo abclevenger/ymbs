@@ -23,15 +23,15 @@ import {
 } from "@/lib/verifiedProof";
 
 const PATH = "/client-results";
-const TITLE = "Client Results & Proof | YMBS";
+const TITLE = "Our Experience & Deliverables | YMBS";
 const DESCRIPTION =
-  "Verified client outcomes, credentials, frameworks, and industry experience from YMBS—fractional operations, technology, communications, and leadership advisory.";
+  "Explore YMBS team experience, professional credentials, frameworks, and examples of deliverables across operations, technology, communications, and leadership.";
 
 const serif = { fontFamily: "'Playfair Display', Georgia, serif" };
 
 export default function ClientResults() {
   useEffect(() => {
-    track.highIntentPageView(PATH, "Client Results");
+    track.highIntentPageView(PATH, "Experience & Deliverables");
     const cleanup = initScrollDepthTracking(PATH);
     return cleanup;
   }, []);
@@ -46,7 +46,7 @@ export default function ClientResults() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            name: "Client Results & Proof",
+            name: "Our Experience & Deliverables",
             description: DESCRIPTION,
             url: `https://ymbs.pro${PATH}`,
           },
@@ -58,7 +58,7 @@ export default function ClientResults() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(212,160,23,0.12),transparent)]"></div>
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <p className="text-primary font-bold tracking-wider uppercase text-sm mb-6">
-              Client Results & Proof
+              Experience & Deliverables
             </p>
             <h1
               className="text-4xl md:text-6xl font-bold mb-8 text-balance leading-tight"
