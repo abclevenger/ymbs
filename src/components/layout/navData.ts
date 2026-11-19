@@ -1,9 +1,15 @@
 export const whoWeHelp = [
   {
-    title: "Nonprofits",
-    href: "/nonprofit-consulting",
+    title: "Small & Mid-Sized Businesses",
+    href: "/services",
     description:
-      "Operations, technology, governance, and leadership for mission-driven organizations.",
+      "Senior operations, technology, communications, and leadership expertise — flexibly engaged without a full executive team.",
+  },
+  {
+    title: "Professional Services Firms",
+    href: "/professional-services",
+    description:
+      "Operations, technology, and leadership for growing professional-services firms.",
   },
   {
     title: "Law Firms",
@@ -12,16 +18,16 @@ export const whoWeHelp = [
       "Practice management, CRM, intake, cybersecurity, and legal technology consulting.",
   },
   {
-    title: "Professional Services",
-    href: "/professional-services",
+    title: "Nonprofits",
+    href: "/nonprofit-consulting",
     description:
-      "Operations, technology, and leadership for growing professional-services firms.",
+      "Operations, technology, governance, and leadership for mission-driven organizations.",
   },
   {
     title: "Mission-Driven Organizations",
     href: "/mission-driven-organizations",
     description:
-      "Governance, communications, and systems for organizations driven by purpose.",
+      "Governance, communications, and systems for organizations driven by purpose — including social enterprises, purpose-led businesses, and similar organizations outside traditional nonprofit structures.",
   },
 ];
 
@@ -43,19 +49,29 @@ export const whatWeDo = [
     href: "/services/technology",
     description:
       "Business technology, automation, cybersecurity, systems and infrastructure aligned around how the organization actually works.",
+    // Primary capabilities first (in priority order), then secondary
+    // capabilities grouped below for discoverability.
     children: [
       { title: "Technology Hub", href: "/services/technology" },
-      { title: "AI & Automation", href: "/services/technology/ai-automation" },
       {
         title: "Cybersecurity & Risk",
         href: "/services/technology/cybersecurity",
       },
+      { title: "CRM & Workflow", href: "/services/technology/crm-workflow" },
+      {
+        title: "AI & Automation",
+        href: "/services/technology/ai-automation",
+      },
+      { title: "Website & SEO", href: "/services/technology/website-seo" },
+      {
+        title: "Software Selection",
+        href: "/services/technology/software-solutions",
+      },
+      // Secondary capabilities
       {
         title: "Connectivity & Comms",
         href: "/services/technology/connectivity",
       },
-      { title: "CRM & Workflow", href: "/services/technology/crm-workflow" },
-      { title: "Website & SEO", href: "/services/technology/website-seo" },
       {
         title: "IoT & Physical Security",
         href: "/services/technology/iot-physical-security",
@@ -63,10 +79,6 @@ export const whatWeDo = [
       {
         title: "Digital Signage",
         href: "/services/technology/digital-signage",
-      },
-      {
-        title: "Software Selection",
-        href: "/services/technology/software-solutions",
       },
       {
         title: "Mobility & Workforce",

@@ -178,6 +178,15 @@ export default function MissionDriven() {
               operations, technology, communications, and leadership—so the
               organization can focus on impact instead of internal friction.
             </motion.p>
+            <motion.p
+              variants={fadeUp}
+              className="text-sm md:text-base text-zinc-400 max-w-2xl mx-auto leading-relaxed mt-3"
+            >
+              Mission-driven organizations include social enterprises,
+              purpose-led businesses, and similar organizations outside
+              traditional nonprofit structures — if your work is driven by
+              purpose, you're in the right place.
+            </motion.p>
             <motion.div
               variants={fadeUp}
               className="flex flex-col sm:flex-row justify-center gap-4 mt-10"

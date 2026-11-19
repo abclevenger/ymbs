@@ -82,20 +82,20 @@ export default function HeroSection() {
               className="text-[2.25rem] md:text-6xl lg:text-[4.25rem] font-bold mb-4 md:mb-5 text-balance leading-[1.05] tracking-tight text-white"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
-              Business challenges don't always require full-time solutions.
+              Senior expertise. Built for how you actually work.
             </h1>
 
             <p className="text-base md:text-xl text-zinc-100 mb-3 md:mb-4 leading-relaxed text-balance font-medium">
               Get experienced support across Operations, Technology,
-              Communications, and Leadership — when you need it, without adding
-              permanent overhead.
+              Communications, and Leadership — flexibly engaged when you need
+              it, without the overhead of a full-time executive team.
             </p>
 
             <div className="text-sm md:text-lg text-zinc-200 mb-6 md:mb-8 leading-relaxed text-balance">
               <p>
                 From identifying what's holding your business back to
-                implementing solutions, we help you move forward — one priority
-                at a time.
+                implementing practical solutions that move it forward, we help
+                you get real results — one priority at a time.
               </p>
             </div>
 

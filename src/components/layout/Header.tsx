@@ -32,6 +32,7 @@ export function Header() {
   }, []);
 
   const isWhoWeHelpActive =
+    location.pathname === "/services" ||
     location.pathname === "/nonprofit-consulting" ||
     location.pathname === "/law-firm-technology" ||
     location.pathname === "/professional-services" ||
