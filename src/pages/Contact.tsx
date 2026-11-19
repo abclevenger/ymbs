@@ -31,6 +31,9 @@ export default function Contact() {
   const [selectedNeeds, setSelectedNeeds] = useState<string[]>([]);
   // The step-2 field unmounts on step 3; preserve the challenge in state.
   const [challenge, setChallenge] = useState("");
+  const [contactDetails, setContactDetails] = useState({
+    firstName: "", lastName: "", email: "", phone: "", company: "",
+  });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 
@@ -529,6 +532,8 @@ export default function Contact() {
                             <Input
                               id="firstName"
                               name="firstName"
+                              value={contactDetails.firstName}
+                              onChange={(e) => setContactDetails((prev) => ({ ...prev, firstName: e.target.value }))}
                               required
                               autoComplete="given-name"
                               placeholder="John"
@@ -549,6 +554,8 @@ export default function Contact() {
                             <Input
                               id="lastName"
                               name="lastName"
+                              value={contactDetails.lastName}
+                              onChange={(e) => setContactDetails((prev) => ({ ...prev, lastName: e.target.value }))}
                               required
                               autoComplete="family-name"
                               placeholder="Doe"
@@ -560,6 +567,8 @@ export default function Contact() {
                           <Input
                             id="email"
                             name="email"
+                            value={contactDetails.email}
+                            onChange={(e) => setContactDetails((prev) => ({ ...prev, email: e.target.value }))}
                             type="email"
                             required
                             autoComplete="email"
@@ -582,6 +591,8 @@ export default function Contact() {
                             <Input
                               id="phone"
                               name="phone"
+                              value={contactDetails.phone}
+                              onChange={(e) => setContactDetails((prev) => ({ ...prev, phone: e.target.value }))}
                               type="tel"
                               autoComplete="tel"
                               inputMode="tel"
@@ -593,6 +604,8 @@ export default function Contact() {
                             <Input
                               id="company"
                               name="company"
+                              value={contactDetails.company}
+                              onChange={(e) => setContactDetails((prev) => ({ ...prev, company: e.target.value }))}
                               autoComplete="organization"
                               placeholder="Acme Corp"
                             />
