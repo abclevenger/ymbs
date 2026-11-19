@@ -206,14 +206,14 @@ export default function Contact() {
     <div className="flex flex-col min-h-screen">
       <SEOHead
         title="Get Clarity | YMBS"
-        description="Start with a free 30-minute fit conversation. Tell us where your organization is today and where you're trying to go—we'll help determine what expertise, systems, or support actually make sense."
+        description="Request a conversation with YMBS. Share the challenge your organization is facing, and we will follow up to discuss the next step."
         canonical="/contact"
         schemaJson={{
           "@context": "https://schema.org",
           "@type": "WebPage",
           name: "Get Clarity",
           description:
-            "Start with a free 30-minute fit conversation. Tell us where your organization is today and where you're trying to go—we'll help determine what expertise, systems, or support actually make sense.",
+            "Request a conversation with YMBS. Share your challenge so we can follow up about the right next step.",
           url: "https://ymbs.pro/contact",
         }}
       />
@@ -229,6 +229,17 @@ export default function Contact() {
             You do not need to know whether this is an operations, technology,
             communications, or leadership issue. Tell us what is happening.
             We'll help determine the right next step.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
+            <a href="#contact-form" className="rounded-full bg-primary text-[#0B1D33] px-7 py-3 font-bold hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+              Request a conversation
+            </a>
+            <Link to="/scale/assessment" className="rounded-full border border-white/30 px-7 py-3 font-semibold text-white hover:border-primary hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+              Not sure yet? Take SCALE™
+            </Link>
+          </div>
+          <p className="text-sm text-white/60 mt-4">
+            The form is a conversation request, not an instant appointment booking.
           </p>
         </div>
       </section>
@@ -301,8 +312,8 @@ export default function Contact() {
                   Request Received
                 </h3>
                 <p className="text-lg text-muted-foreground max-w-md mb-8">
-                  We've received your details and will be in touch within one
-                  business day to schedule your discovery call.
+                  Your inquiry was submitted. We'll use the contact information you
+                  provided to follow up about the next step.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
@@ -667,12 +678,11 @@ export default function Contact() {
               <p className="text-sm font-bold text-zinc-900 mb-1">
                 Response Time
               </p>
-              <p className="text-xs text-zinc-500">Within 1 business day</p>
+              <p className="text-xs text-zinc-500">We follow up on submitted inquiries</p>
             </div>
           </div>
           <p className="text-center mt-8 text-sm text-zinc-500">
-            No obligation. No hard pitch. Just clarity. Your information is
-            private and never shared.
+            No obligation. No hard pitch. Your details are used to respond to your request.
           </p>
         </div>
       </section>
