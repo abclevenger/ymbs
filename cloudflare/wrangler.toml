@@ -1,0 +1,9 @@
+name = "ymbs-edge-routing"
+main = "edge-routing-worker.js"
+compatibility_date = "2024-01-01"
+
+# Route the Worker on the ymbs.pro zone.
+# Requires the zone to be added to the Cloudflare account.
+routes = [
+  { pattern = "*ymbs.pro/*", zone_name = "ymbs.pro" }
+]
