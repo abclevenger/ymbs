@@ -249,6 +249,34 @@ describe("Route Sync — Edge Function ↔ routes.ts", () => {
   });
 });
 
+describe("Route Sync — Deployed Cloudflare Worker source", () => {
+  const source = readFileSync(join(process.cwd(), "cloudflare", "edge-routing-worker.js"), "utf-8");
+  const extractArray = (name: string): string[] => {
+    const match = source.match(new RegExp(`const ${name}\\s*=\\s*\\[([^\\]]+)\\]`, "s"));
+    return (match?.[1].match(/["']([^"']+)["']/g) ?? []).map((v) => v.slice(1, -1));
+  };
+  const extractRedirects = (): Record<string, string> => {
+    const body = source.match(/const legacyRedirects = \\{([\\s\\S]*?)\\n\\};/)?.[1] ?? "";
+    const entries = [...body.matchAll(/["']([^"']+)["']\\s*:\\s*["']([^"']+)["']/g)];
+    return Object.fromEntries(entries.map(([, key, value]) => [key, value]));
+  };
+
+  it("Worker public routes stay in sync with the application", () => {
+    expect(extractArray("validPageRoutes")).toEqual(validPageRoutes);
+    expect(extractArray("noIndexRoutes")).toEqual(noIndexRoutes);
+    expect(extractArray("dynamicRoutePrefixes")).toEqual(dynamicRoutePrefixes);
+    expect(extractArray("homepageAliases")).toEqual(homepageAliases);
+    expect(extractRedirects()).toEqual(legacyRedirects);
+  });
+
+  it("Worker preserves hosting endpoints and non-page HTTP methods", () => {
+    expect(source).toContain('request.method !== "GET" && request.method !== "HEAD"');
+    for (const prefix of ["/__vibe/", "/cdn-cgi/", "/.well-known/"]) {
+      expect(source).toContain(prefix);
+    }
+  });
+});
+
 describe("Route Sync — Static redirect files exist", () => {
   it("all legacy redirect static files have been generated", () => {
     const { missing } = staticRedirectFilesExist();
