@@ -63,6 +63,11 @@ const CLIENTS = [
     src: "https://files.leadconnectorhq.com/file/6aff76cbff777b8c6ec55125/alliance-party-logo-1.png",
     alt: "Alliance Party logo",
   },
+  {
+    name: "Jump Start Legal Justice Center",
+    src: "https://files.leadconnectorhq.com/file/6aff773ad50d9db796044d65/jump-start-legal-justice-center-logo.png",
+    alt: "Jump Start Legal Justice Center logo",
+  },
 ] as const;
 
 export default function ClientsBar() {
