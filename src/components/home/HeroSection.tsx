@@ -8,11 +8,12 @@ import ScalePreviewModal from "@/components/ScalePreviewModal";
 const proofPoints = [
   {
     icon: Users,
-    label: "Fractional engagement",
+    label: "Senior expertise, on your terms.",
+    detail: "The right experience for a project, ongoing guidance, or hands-on support—without a full-time executive.",
   },
   {
     icon: ShieldCheck,
-    label: "Senior expertise",
+    label: "Experienced specialists",
   },
   {
     icon: Layers,
@@ -153,13 +154,16 @@ export default function HeroSection() {
                 What you get
               </p>
               <ul className="space-y-9 lg:space-y-10">
-                {proofPoints.map(({ icon: Icon, label }) => (
+                {proofPoints.map(({ icon: Icon, label, detail }) => (
                   <li key={label} className="flex items-center gap-5">
                     <span className="flex items-center justify-center w-13 h-13 lg:w-14 lg:h-14 rounded-full bg-primary/10 border border-primary/20 flex-shrink-0">
                       <Icon className="w-6 h-6 text-primary" />
                     </span>
-                    <span className="text-lg lg:text-xl text-foreground font-medium leading-snug">
-                      {label}
+                    <span className="flex flex-col gap-1">
+                      <span className="text-lg lg:text-xl text-foreground font-medium leading-snug">
+                        {label}
+                      </span>
+                      {detail && <span className="text-sm text-zinc-600 leading-relaxed">{detail}</span>}
                     </span>
                   </li>
                 ))}
@@ -182,14 +186,15 @@ export default function HeroSection() {
             >
               What you get
             </p>
-            <ul className="grid grid-cols-2 gap-5">
-              {proofPoints.map(({ icon: Icon, label }) => (
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {proofPoints.map(({ icon: Icon, label, detail }) => (
                 <li key={label} className="flex items-center gap-3">
                   <span className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex-shrink-0">
                     <Icon className="w-4 h-4 text-primary" />
                   </span>
-                  <span className="text-sm text-foreground font-medium leading-snug">
-                    {label}
+                  <span className="flex flex-col gap-1">
+                    <span className="text-sm text-foreground font-medium leading-snug">{label}</span>
+                    {detail && <span className="text-xs text-zinc-600 leading-snug">{detail}</span>}
                   </span>
                 </li>
               ))}
