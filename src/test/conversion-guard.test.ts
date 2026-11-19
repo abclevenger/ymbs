@@ -29,6 +29,10 @@ describe("YMBS homepage conversion guardrails", () => {
     expect(contact).toContain("value={challenge}");
     expect(contact).toContain("onChange={(e) => setChallenge(e.target.value)}");
     expect(contact).toContain("const message = challenge.trim()");
+    expect(contact).toContain("const [contactDetails, setContactDetails]");
+    for (const key of ["firstName", "lastName", "email", "phone", "company"]) {
+      expect(contact).toContain("value={contactDetails." + key + "}");
+    }
     expect(contact).toContain("[CRM_FIELDS.inquiryMessage]: message");
   });
 
