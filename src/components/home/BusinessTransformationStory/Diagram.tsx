@@ -3,7 +3,7 @@
  * section: diagnostic clarity lens, strain pressure points, migrating
  * concern threads, discipline compass, SCALE™ ring, and coordinated flow.
  */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   disciplines,
   fragmentNodes,
@@ -47,6 +47,7 @@ const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 export default function Diagram({ p, reduced, small }: DiagramProps) {
   const [active, setActive] = useState<DisciplineId | null>(null);
 
+
   // ---- Derived animation values ----
   const strain =
     smoothstep(mapRange(p, 0.2, 0.36)) *
@@ -58,6 +59,12 @@ export default function Diagram({ p, reduced, small }: DiagramProps) {
   const scaleAppear = smoothstep(mapRange(p, 0.76, 0.9));
   const minorFade = lerp(1, 0.6, smoothstep(mapRange(p, 0.82, 0.95)));
   const interactive = p >= 0.88;
+
+  // Reset selection only when crossing back out of the finale,
+  // not on every scroll animation frame.
+  useEffect(() => {
+    if (!interactive) setActive(null);
+  }, [interactive]);
 
   // Clarity lens
   const clarity = smoothstep(mapRange(p, 0.46, 0.62));
@@ -287,7 +294,12 @@ export default function Diagram({ p, reduced, small }: DiagramProps) {
         <g aria-hidden="true">
           {fogged ? (
             <>
-              <g filter="url(#story-fog)" opacity={lerp(0.85, 1, clarity)}>
+              <g
+                // Blur filters are expensive on mobile GPUs. Keep the
+                // diagnostic contrast through opacity without a blur pass.
+                filter={small ? undefined : "url(#story-fog)"}
+                opacity={small ? lerp(0.55, 1, clarity) : lerp(0.85, 1, clarity)}
+              >
                 {renderScene("fog")}
               </g>
               <g clipPath="url(#story-lens)">
