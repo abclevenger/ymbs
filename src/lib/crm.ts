@@ -41,14 +41,14 @@ export const CRM_FIELDS = {
   executiveReadinessScenario: "contact.executive_readiness_scenario",
   executiveReadinessDate: "contact.executive_readiness_target_date",
 
-  // SCALE assessment
-  scaleScore: "contact.scale_score",
-  scaleStructureScore: "contact.scale_structure_score",
-  scaleCultureScore: "contact.scale_culture_score",
-  scaleAlignmentScore: "contact.scale_alignment_score",
-  scaleLiabilityGovernanceScore: "contact.scale_liability_governance_score",
-  scaleExecutionScore: "contact.scale_execution_score",
-  scaleAnswers: "contact.scale_answers",
+  // SCALE assessment — registered custom fields (IDs from CRM location Qox9LgP4rnP1Zvis428l)
+  scaleScore: "NwWqffKEn8vxG07oj8T2",
+  scaleStructureScore: "0Zsw4UlMjYSMXymuw5Uz",
+  scaleCultureScore: "FeNTIPS1k10EjBiOvgVw",
+  scaleAlignmentScore: "ZLJURnFP4llENc8kCZUZ",
+  scaleLiabilityGovernanceScore: "LvPzihNTrjT2jEgA8GwH",
+  scaleExecutionScore: "0W8c85WlI7mHxdEBW6Mq",
+  scaleAnswers: "YtKXLUF1Nyx6ndpf4jsi",
 
   // Assessment scores
   cyberScore: "contact.cyber_score", // REQUIRES_CRM_FIELD_CONFIRMATION
@@ -58,8 +58,8 @@ export const CRM_FIELDS = {
   technologyScore: "contact.technology_score", // REQUIRES_CRM_FIELD_CONFIRMATION
   technologyAnswers: "contact.technology_answers", // REQUIRES_CRM_FIELD_CONFIRMATION
   systemHealthScore: "contact.system_health_score",
-  assessmentType: "contact.assessment_type", // REQUIRES_CRM_FIELD_CONFIRMATION
-  assessmentResult: "contact.assessment_result", // REQUIRES_CRM_FIELD_CONFIRMATION
+  assessmentType: "Vvt1cTv7xKfUFjPOHY5r",
+  assessmentResult: "syvXHNJXoO5iQRzrnW2k",
 
   // Support portal
   supportService: "contact.support_service",
