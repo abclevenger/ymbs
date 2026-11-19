@@ -61,6 +61,8 @@ const CLIENTS = [
 ] as const;
 
 export default function ClientsBar() {
+  // Duplicate the list so the marquee loops seamlessly.
+  const loop = [...CLIENTS, ...CLIENTS];
   return (
     <section
       className="py-12 md:py-16 bg-[hsl(var(--brand-warm))]"
@@ -74,16 +76,22 @@ export default function ClientsBar() {
         >
           Organizations We&rsquo;ve Supported
         </p>
+      </div>
+
+      {/* Edge-faded marquee track */}
+      <div className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 md:w-32 bg-gradient-to-r from-[hsl(var(--brand-warm))] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 md:w-32 bg-gradient-to-l from-[hsl(var(--brand-warm))] to-transparent" />
         <Link
           to="/client-results"
           className="block group"
           aria-label="View verified experience and deliverables"
         >
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 md:gap-6 items-stretch justify-items-center">
-            {CLIENTS.map((client) => (
+          <div className="clients-marquee flex w-max gap-5 md:gap-6">
+            {loop.map((client, i) => (
               <div
-                key={client.name}
-                className="flex items-center justify-center h-24 sm:h-28 md:h-32 w-full rounded-xl bg-white border border-black/5 shadow-sm px-5 md:px-7 transition-all duration-200 group-hover:opacity-80 group-hover:shadow-md"
+                key={`${client.name}-${i}`}
+                className="flex shrink-0 items-center justify-center h-24 sm:h-28 md:h-32 w-[220px] sm:w-[260px] md:w-[300px] rounded-xl bg-white border border-black/5 shadow-sm px-5 md:px-7 transition-all duration-200 group-hover:opacity-80 group-hover:shadow-md"
               >
                 <img
                   src={client.src}
@@ -97,6 +105,9 @@ export default function ClientsBar() {
             ))}
           </div>
         </Link>
+      </div>
+
+      <div className="max-w-[1280px] mx-auto px-6">
         <p className="text-center text-xs text-[hsl(var(--muted-foreground))] mt-7 max-w-xl mx-auto">
           Representative experience from across the YMBS team.{" "}
           <Link

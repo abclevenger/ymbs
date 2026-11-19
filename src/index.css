@@ -233,6 +233,24 @@
   .ribbon-navy {
     background: linear-gradient(135deg, #0b1d33 0%, #1a2433 50%, #0b1d33 100%);
   }
+
+  /* Clients logo marquee — slow, seamless horizontal scroll */
+  .clients-marquee {
+    animation: clients-marquee-scroll 40s linear infinite;
+  }
+  .clients-marquee:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes clients-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Half the track (one full set of logos) */
+    transform: translateX(-50%);
+  }
 }
 
 /* Story stage active: smooth fade-up when the dominant stage changes */
@@ -265,5 +283,11 @@
     animation: none;
     opacity: 1;
     transform: none;
+  }
+  .clients-marquee {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
   }
 }
