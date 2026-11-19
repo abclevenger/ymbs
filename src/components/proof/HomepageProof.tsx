@@ -58,7 +58,7 @@ export function HomepageProofCta({
             isDark ? "text-primary" : "text-primary"
           } hover:gap-2.5 transition-all`}
         >
-          Explore Client Results
+          Explore Experience & Deliverables
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>

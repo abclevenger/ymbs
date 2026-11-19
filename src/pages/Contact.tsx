@@ -29,6 +29,11 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [selectedNeeds, setSelectedNeeds] = useState<string[]>([]);
+  // The step-2 field unmounts on step 3; preserve the challenge in state.
+  const [challenge, setChallenge] = useState("");
+  const [contactDetails, setContactDetails] = useState({
+    firstName: "", lastName: "", email: "", phone: "", company: "",
+  });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 
@@ -82,12 +87,8 @@ export default function Contact() {
     if (currentStep === 1 && selectedNeeds.length === 0) {
       newErrors.needs = "Please select at least one area you need help with.";
     }
-    if (currentStep === 2) {
-      const message = formData?.get("message") as string;
-      if (!message || message.trim().length < 10) {
-        newErrors.message =
-          "Please provide at least a brief description (10+ characters).";
-      }
+    if ((currentStep === 2 || currentStep === 3) && challenge.trim().length < 10) {
+      newErrors.message = "Please provide at least a brief description (10+ characters).";
     }
     if (currentStep === 3 && formData) {
       const firstName = formData.get("firstName") as string;
@@ -102,16 +103,11 @@ export default function Contact() {
   };
 
   const handleNext = (currentStep: number) => {
-    const formData =
-      currentStep === 2 || currentStep === 3
-        ? new FormData(document.querySelector("form") as HTMLFormElement)
-        : undefined;
-    if (validateStep(currentStep, formData)) {
-      track.assessmentFunnelStep(
-        "discovery_call",
-        `step_${currentStep}_complete`,
-      );
+    if (validateStep(currentStep)) {
+      track.assessmentFunnelStep("discovery_call", "step_" + currentStep + "_complete");
       setStep(currentStep + 1);
+    } else if (currentStep === 2) {
+      setTouched((prev) => ({ ...prev, message: true }));
     }
   };
 
@@ -175,7 +171,7 @@ export default function Contact() {
     const email = formData.get("email") as string;
     const phone = formData.get("phone") as string;
     const company = formData.get("company") as string;
-    const message = formData.get("message") as string;
+    const message = challenge.trim();
 
     const result = await submitLead({
       formId: "Multi-Step Contact Form",
@@ -206,7 +202,6 @@ export default function Contact() {
     }
 
     track.contactFormSubmitted(selectedNeeds.join(", "), undefined);
-    track.discoveryCallBooked(selectedNeeds.join(", "));
     setIsSubmitted(true);
   };
 
@@ -214,14 +209,14 @@ export default function Contact() {
     <div className="flex flex-col min-h-screen">
       <SEOHead
         title="Get Clarity | YMBS"
-        description="Start with a free 30-minute fit conversation. Tell us where your organization is today and where you're trying to go—we'll help determine what expertise, systems, or support actually make sense."
+        description="Request a conversation with YMBS. Share the challenge your organization is facing, and we will follow up to discuss the next step."
         canonical="/contact"
         schemaJson={{
           "@context": "https://schema.org",
           "@type": "WebPage",
           name: "Get Clarity",
           description:
-            "Start with a free 30-minute fit conversation. Tell us where your organization is today and where you're trying to go—we'll help determine what expertise, systems, or support actually make sense.",
+            "Request a conversation with YMBS. Share your challenge so we can follow up about the right next step.",
           url: "https://ymbs.pro/contact",
         }}
       />
@@ -237,6 +232,17 @@ export default function Contact() {
             You do not need to know whether this is an operations, technology,
             communications, or leadership issue. Tell us what is happening.
             We'll help determine the right next step.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
+            <a href="#contact-form" className="rounded-full bg-primary text-[#0B1D33] px-7 py-3 font-bold hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+              Request a conversation
+            </a>
+            <Link to="/scale/assessment" className="rounded-full border border-white/30 px-7 py-3 font-semibold text-white hover:border-primary hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+              Not sure yet? Take SCALE™
+            </Link>
+          </div>
+          <p className="text-sm text-white/60 mt-4">
+            The form is a conversation request, not an instant appointment booking.
           </p>
         </div>
       </section>
@@ -289,7 +295,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-24 bg-muted/20">
+      <section id="contact-form" className="py-16 md:py-20 bg-muted/20 scroll-mt-28">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-6">
             <TrustSignals variant="light" showRating={true} />
@@ -309,8 +315,8 @@ export default function Contact() {
                   Request Received
                 </h3>
                 <p className="text-lg text-muted-foreground max-w-md mb-8">
-                  We've received your details and will be in touch within one
-                  business day to schedule your discovery call.
+                  Your inquiry was submitted. We'll use the contact information you
+                  provided to follow up about the next step.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
@@ -332,7 +338,7 @@ export default function Contact() {
                   </Link>
                 </div>
                 <p className="text-sm text-zinc-400 mt-6">
-                  A copy of your request has been sent to your email.
+                  We will contact you using the details you provided.
                 </p>
               </motion.div>
             ) : (
@@ -462,6 +468,8 @@ export default function Contact() {
                             <Textarea
                               id="message"
                               name="message"
+                              value={challenge}
+                              onChange={(e) => setChallenge(e.target.value)}
                               required
                               onBlur={(e) =>
                                 handleFieldBlur("message", e.target.value)
@@ -524,6 +532,8 @@ export default function Contact() {
                             <Input
                               id="firstName"
                               name="firstName"
+                              value={contactDetails.firstName}
+                              onChange={(e) => setContactDetails((prev) => ({ ...prev, firstName: e.target.value }))}
                               required
                               autoComplete="given-name"
                               placeholder="John"
@@ -544,6 +554,8 @@ export default function Contact() {
                             <Input
                               id="lastName"
                               name="lastName"
+                              value={contactDetails.lastName}
+                              onChange={(e) => setContactDetails((prev) => ({ ...prev, lastName: e.target.value }))}
                               required
                               autoComplete="family-name"
                               placeholder="Doe"
@@ -555,6 +567,8 @@ export default function Contact() {
                           <Input
                             id="email"
                             name="email"
+                            value={contactDetails.email}
+                            onChange={(e) => setContactDetails((prev) => ({ ...prev, email: e.target.value }))}
                             type="email"
                             required
                             autoComplete="email"
@@ -577,6 +591,8 @@ export default function Contact() {
                             <Input
                               id="phone"
                               name="phone"
+                              value={contactDetails.phone}
+                              onChange={(e) => setContactDetails((prev) => ({ ...prev, phone: e.target.value }))}
                               type="tel"
                               autoComplete="tel"
                               inputMode="tel"
@@ -588,6 +604,8 @@ export default function Contact() {
                             <Input
                               id="company"
                               name="company"
+                              value={contactDetails.company}
+                              onChange={(e) => setContactDetails((prev) => ({ ...prev, company: e.target.value }))}
                               autoComplete="organization"
                               placeholder="Acme Corp"
                             />
@@ -673,12 +691,11 @@ export default function Contact() {
               <p className="text-sm font-bold text-zinc-900 mb-1">
                 Response Time
               </p>
-              <p className="text-xs text-zinc-500">Within 1 business day</p>
+              <p className="text-xs text-zinc-500">We follow up on submitted inquiries</p>
             </div>
           </div>
           <p className="text-center mt-8 text-sm text-zinc-500">
-            No obligation. No hard pitch. Just clarity. Your information is
-            private and never shared.
+            No obligation. No hard pitch. Your details are used to respond to your request.
           </p>
         </div>
       </section>

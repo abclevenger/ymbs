@@ -44,7 +44,7 @@ export function Footer() {
               </li>
               <li>
                 <a href={mainSiteHref("/client-results")} className="hover:text-primary">
-                  Client Results
+                  Experience & Deliverables
                 </a>
               </li>
               <li>
@@ -143,7 +143,7 @@ export function Footer() {
 
               <li>
                 <a href={mainSiteHref("/support")} className="hover:text-primary">
-                  Client Portal
+                  Help Center
                 </a>
               </li>
             </ul>
