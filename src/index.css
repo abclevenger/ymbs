@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Appalachian Brand Palette */
+    --background: 40 15% 95%; /* Warm Neutral #F5F3EF */
+    --foreground: 215 50% 14%; /* Dark Slate #1A2433 */
+
+    --card: 40 15% 98%;
+    --card-foreground: 215 50% 14%;
+
+    --popover: 40 15% 98%;
+    --popover-foreground: 215 50% 14%;
+
+    --primary: 41 80% 36%; /* Rich Gold #D4A017 */
+    --primary-foreground: 215 50% 14%;
+
+    --secondary: 215 25% 88%; /* Soft Gray #D9DDE2 */
+    --secondary-foreground: 215 50% 14%;
+
+    --muted: 215 15% 90%;
+    --muted-foreground: 215 15% 40%;
+
+    --accent: 41 80% 36%;
+    --accent-foreground: 215 50% 14%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 40 15% 95%;
+
+    --border: 215 15% 85%;
+    --input: 215 15% 85%;
+    --ring: 41 80% 36%;
+
+    --radius: 0.5rem;
+
+    --brand-navy: 215 56% 13%; /* #0B1D33 */
+    --brand-gold: 41 80% 36%; /* #D4A017 */
+    --brand-warm: 40 15% 95%; /* #F5F3EF */
+    --brand-gray: 215 18% 86%; /* #D9DDE2 */
+    --brand-slate: 215 33% 15%; /* #1A2433 */
+
+    --brand-dark: 215 56% 13%; /* Navy for header */
+    --brand-dark-foreground: 40 15% 95%;
+  }
+
+  .dark {
+    --background: 215 56% 8%; /* Deep Navy */
+    --foreground: 40 15% 95%;
+
+    --card: 215 50% 10%;
+    --card-foreground: 40 15% 95%;
+
+    --popover: 215 50% 10%;
+    --popover-foreground: 40 15% 95%;
+
+    --primary: 41 80% 42%;
+    --primary-foreground: 215 56% 8%;
+
+    --secondary: 215 30% 18%;
+    --secondary-foreground: 40 15% 95%;
+
+    --muted: 215 30% 18%;
+    --muted-foreground: 215 10% 65%;
+
+    --accent: 41 80% 42%;
+    --accent-foreground: 215 56% 8%;
+
+    --destructive: 0 50% 30%;
+    --destructive-foreground: 40 15% 95%;
+
+    --border: 215 30% 20%;
+    --input: 215 30% 20%;
+    --ring: 41 80% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Montserrat", system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Section Backgrounds */
+  .bg-dark-section {
+    @apply bg-[#0B1D33] text-white;
+  }
+  .bg-light-section {
+    @apply bg-[#F5F3EF] text-[#1A2433];
+  }
+  .bg-alt-section {
+    @apply bg-white text-[#1A2433];
+  }
+
+  /* Enterprise Card System */
+  .card-enterprise {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 160, 23, 0.15);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 30px 120px rgba(0, 0, 0, 0.35);
+    transition: all 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-enterprise:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 40px 140px rgba(0, 0, 0, 0.45);
+    border-color: rgba(212, 160, 23, 0.3);
+  }
+
+  /* Dark Cards (Navy sections) */
+  .card-dark {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 160, 23, 0.15);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    transition: all 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card-dark:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 160, 23, 0.3);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  }
+
+  /* Light Cards (Warm neutral sections) */
+  .card-light {
+    background: #ffffff;
+    border: 1px solid rgba(11, 29, 51, 0.08);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(11, 29, 51, 0.06);
+    transition: all 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card-light:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 160, 23, 0.25);
+    box-shadow: 0 20px 60px rgba(11, 29, 51, 0.1);
+  }
+
+  /* Button Glow */
+  .btn-glow {
+    box-shadow: 0 0 30px rgba(212, 160, 23, 0.25);
+  }
+  .btn-glow:hover {
+    box-shadow: 0 0 50px rgba(212, 160, 23, 0.4);
+  }
+
+  /* Typography */
+  .h1-enterprise {
+    @apply text-[64px] font-[700] leading-[0.95] tracking-[-0.04em];
+    font-family: "Playfair Display", Georgia, serif;
+  }
+  .h2-enterprise {
+    @apply text-[48px] font-[700] leading-[1.05];
+    font-family: "Playfair Display", Georgia, serif;
+  }
+  .h3-enterprise {
+    @apply text-[30px] font-[600];
+    font-family: "Playfair Display", Georgia, serif;
+  }
+  .body-enterprise {
+    @apply text-[20px] font-[500] leading-[1.7];
+    font-family: "Montserrat", sans-serif;
+  }
+  .small-enterprise {
+    @apply text-[18px];
+    font-family: "Montserrat", sans-serif;
+  }
+
+  /* Spacing */
+  .section-spacing {
+    @apply py-[90px] md:py-[120px] lg:py-[180px];
+  }
+
+  /* Layout */
+  .container-enterprise {
+    @apply max-w-[1440px] mx-auto px-6;
+  }
+  .p-enterprise {
+    @apply max-w-[680px];
+  }
+
+  /* Gradients & Glows */
+  .hero-gradient {
+    @apply bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(212,160,23,0.15),transparent)];
+  }
+  .text-gradient-primary {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#D4A017] to-[#E8B530];
+  }
+  .dark-glow {
+    background: radial-gradient(
+      circle at center,
+      rgba(212, 160, 23, 0.1) 0%,
+      transparent 70%
+    );
+  }
+
+  /* Appalachian Mountain Silhouette Divider */
+  .mountain-divider {
+    background-image: url("https://vibe.filesafe.space/1776094666446468637/assets/963c7f96-ac21-49ff-bede-b0c7e43f3756.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Ribbon Visual Language */
+  .ribbon-gold {
+    background: linear-gradient(135deg, #d4a017 0%, #e8b530 50%, #d4a017 100%);
+  }
+  .ribbon-navy {
+    background: linear-gradient(135deg, #0b1d33 0%, #1a2433 50%, #0b1d33 100%);
+  }
+}
+
+/* Reduced motion: render all content immediately, no transforms */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

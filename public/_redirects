@@ -1,0 +1,45 @@
+# Legacy .html → canonical 301 redirects (ymbs.pro)
+# These URLs were reported in GSC as "Crawled – currently not indexed"
+# because the SPA returned HTTP 200 + a NotFound shell (soft-404).
+# Format: <from>  <to>  <status>
+#
+# SPA fallback: all non-redirected paths serve index.html (200) so the
+# React router can handle client-side routing. This MUST come last.
+# /*  /index.html  200
+
+# Legacy technology pages → dedicated sub-service pages
+/technology/digital-signage-menu-boards.html    /services/technology/digital-signage         301
+/technology/iot-physical-security.html         /services/technology/iot-physical-security   301
+/technology/ai-communications.html             /services/technology/ai-automation           301
+/technology/online-reputation-management.html  /services/communications/reputation-management 301
+/technology/software-solutions.html            /services/technology/software-solutions      301
+/technology/mobility-workforce.html             /services/technology/mobility-workforce       301
+/technology/digital-growth.html                 /services/technology/website-seo             301
+/technology-services/technology-assessment.html /assessments/technology                      301
+/enterprise-connectivity.html                   /services/technology/connectivity            301
+/comprehensive-technology-audit-services.html   /assessments/technology                      301
+
+# Legacy leadership page
+/leadership/community-research-engagement.html  /services/leadership/community-engagement    301
+
+# Legacy Mission Foundation
+/mission-foundation/board-governance-framework.html  /services/operations/governance    301
+/mission-foundation/                                  /mission-foundation    301
+
+# Legacy nonprofit content → Nonprofit Consulting money page
+/nonprofit-strategy-development-vs-traditional-business-models.html  /nonprofit-consulting  301
+/unlock-nonprofit-success-strategic-development.html                  /nonprofit-consulting  301
+/empowering-nonprofits-florida-ymbs-consulting-insights.html          /nonprofit-consulting  301
+
+# Blog consolidation: /blog → /insights (single canonical blog)
+/blog      /insights  301
+/blog/*    /insights/:splat  301
+
+# Short discipline URLs → canonical /services/* URLs (duplicate content consolidation)
+/operations        /services/operations        301
+/technology        /services/technology         301
+/communications     /services/communications    301
+/leadership         /services/leadership         301
+
+# SPA fallback — must be LAST so legacy 301s above take precedence.
+/*  /index.html  200

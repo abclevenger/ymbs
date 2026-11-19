@@ -1,0 +1,930 @@
+[
+  {
+    "route": "/",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Fractional Operations, Technology, Communications &amp; Lead",
+    "canonical": "https://ymbs.pro/"
+  },
+  {
+    "route": "/services",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Services | Operations, Technology, Communications &amp; Lead",
+    "canonical": "https://ymbs.pro/services"
+  },
+  {
+    "route": "/services/operations",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Fractional Operations Support | YMBS",
+    "canonical": "https://ymbs.pro/services/operations"
+  },
+  {
+    "route": "/services/technology",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Fractional Technology Advisory | YMBS",
+    "canonical": "https://ymbs.pro/services/technology"
+  },
+  {
+    "route": "/services/leadership",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Fractional Leadership &amp; Advisory | YMBS",
+    "canonical": "https://ymbs.pro/services/leadership"
+  },
+  {
+    "route": "/services/communications",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Strategic Communications Consulting &amp; Executive Media Tr",
+    "canonical": "https://ymbs.pro/services/communications"
+  },
+  {
+    "route": "/insights",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Insights &amp; Resources | YMBS",
+    "canonical": "https://ymbs.pro/insights"
+  },
+  {
+    "route": "/assessments/cyber-readiness",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Cyber Readiness Assessment | YMBS",
+    "canonical": "https://ymbs.pro/assessments/cyber-readiness"
+  },
+  {
+    "route": "/assessments/technology",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Technology Assessment | YMBS",
+    "canonical": "https://ymbs.pro/assessments/technology"
+  },
+  {
+    "route": "/assessments/seo",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "SEO &amp; Visibility Assessment | YMBS",
+    "canonical": "https://ymbs.pro/assessments/seo"
+  },
+  {
+    "route": "/assessments/system-health",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "System Health Quiz | YMBS",
+    "canonical": "https://ymbs.pro/assessments/system-health"
+  },
+  {
+    "route": "/assessments/dashboard",
+    "status": 200,
+    "location": "",
+    "robots": "noindex, nofollow",
+    "title": "Assessment Dashboard | YMBS",
+    "canonical": "https://ymbs.pro/assessments/dashboard"
+  },
+  {
+    "route": "/assessments",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Assessments — Find the Real Problem | YMBS",
+    "canonical": "https://ymbs.pro/assessments"
+  },
+  {
+    "route": "/solutions/organizational-growth",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Organizational Growth Readiness | YMBS",
+    "canonical": "https://ymbs.pro/solutions/organizational-growth"
+  },
+  {
+    "route": "/solutions/ai-adoption",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "AI Adoption That Actually Delivers | YMBS",
+    "canonical": "https://ymbs.pro/solutions/ai-adoption"
+  },
+  {
+    "route": "/solutions/technology-modernization",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Technology Modernization | YMBS",
+    "canonical": "https://ymbs.pro/solutions/technology-modernization"
+  },
+  {
+    "route": "/solutions/organizational-change",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Organizational Change | YMBS",
+    "canonical": "https://ymbs.pro/solutions/organizational-change"
+  },
+  {
+    "route": "/contact",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Get Clarity | YMBS",
+    "canonical": "https://ymbs.pro/contact"
+  },
+  {
+    "route": "/policy",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Privacy Policy | YMBS",
+    "canonical": "https://ymbs.pro/policy"
+  },
+  {
+    "route": "/terms",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Terms and Conditions | YMBS",
+    "canonical": "https://ymbs.pro/terms"
+  },
+  {
+    "route": "/a2p",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "A2P 10DLC Compliance | YMBS",
+    "canonical": "https://ymbs.pro/a2p"
+  },
+  {
+    "route": "/accessibility",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Accessibility Statement | YMBS",
+    "canonical": "https://ymbs.pro/accessibility"
+  },
+  {
+    "route": "/elevation",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "ELEVATION Growth Platform | YMBS",
+    "canonical": "https://ymbs.pro/elevation"
+  },
+  {
+    "route": "/services/seo",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "SEO Services | YMBS",
+    "canonical": "https://ymbs.pro/services/seo"
+  },
+  {
+    "route": "/portfolio",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Portfolio &amp; Client Work | YMBS",
+    "canonical": "https://ymbs.pro/portfolio"
+  },
+  {
+    "route": "/team",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Our Team | YMBS",
+    "canonical": "https://ymbs.pro/team"
+  },
+  {
+    "route": "/sitemap",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Sitemap | YMBS",
+    "canonical": "https://ymbs.pro/sitemap"
+  },
+  {
+    "route": "/suppliers",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Technology Solution Finder | YMBS",
+    "canonical": "https://ymbs.pro/suppliers"
+  },
+  {
+    "route": "/support",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Support &amp; Help Center | YMBS",
+    "canonical": "https://ymbs.pro/support"
+  },
+  {
+    "route": "/llm-knowledge",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "YMBS — AI &amp; LLM Knowledge Base | Yellow Mountain Busines",
+    "canonical": "https://ymbs.pro/llm-knowledge"
+  },
+  {
+    "route": "/scale",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "The SCALE™ Framework — YMBS Business Readiness Methodology",
+    "canonical": "https://ymbs.pro/scale"
+  },
+  {
+    "route": "/scale/assessment",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "SCALE Readiness Assessment | YMBS",
+    "canonical": "https://ymbs.pro/scale/assessment"
+  },
+  {
+    "route": "/michelle-griffith",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Michelle Griffith, APR | Strategic Communications Consulting",
+    "canonical": "https://ymbs.pro/michelle-griffith"
+  },
+  {
+    "route": "/executive-readiness-intensive",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Executive Readiness Intensive | YMBS",
+    "canonical": "https://ymbs.pro/executive-readiness-intensive"
+  },
+  {
+    "route": "/law-firm-pr-system",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Law Firm Authority &amp; PR System | YMBS",
+    "canonical": "https://ymbs.pro/law-firm-pr-system"
+  },
+  {
+    "route": "/nonprofit-consulting",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Nonprofit Consulting | Operations, Technology &amp; Leadersh",
+    "canonical": "https://ymbs.pro/nonprofit-consulting"
+  },
+  {
+    "route": "/professional-services",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Professional Services Consulting | YMBS",
+    "canonical": "https://ymbs.pro/professional-services"
+  },
+  {
+    "route": "/mission-driven-organizations",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Mission-Driven Organization Consulting | YMBS",
+    "canonical": "https://ymbs.pro/mission-driven-organizations"
+  },
+  {
+    "route": "/partners",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Trusted Specialist Network | YMBS",
+    "canonical": "https://ymbs.pro/partners"
+  },
+  {
+    "route": "/law-firm-technology",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Law Firm Technology Consulting | Practice Management &amp; O",
+    "canonical": "https://ymbs.pro/law-firm-technology"
+  },
+  {
+    "route": "/fractional-coo",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Fractional COO Services | Operations &amp; Governance | YMBS",
+    "canonical": "https://ymbs.pro/fractional-coo"
+  },
+  {
+    "route": "/strategic-planning",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Strategic Planning That Gets Executed | YMBS",
+    "canonical": "https://ymbs.pro/strategic-planning"
+  },
+  {
+    "route": "/mission-foundation",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Mission Foundation Framework | YMBS",
+    "canonical": "https://ymbs.pro/mission-foundation"
+  },
+  {
+    "route": "/integrated-executive-advisory",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Integrated Executive Advisory | YMBS",
+    "canonical": "https://ymbs.pro/integrated-executive-advisory"
+  },
+  {
+    "route": "/company-profile",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "YMBS Company Profile &amp; Capabilities | Yellow Mountain Bu",
+    "canonical": "https://ymbs.pro/company-profile"
+  },
+  {
+    "route": "/client-results",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Client Results &amp; Proof | YMBS",
+    "canonical": "https://ymbs.pro/client-results"
+  },
+  {
+    "route": "/thania-clevenger",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Thania Clevenger — Fractional COO | Operations, Governance &",
+    "canonical": "https://ymbs.pro/thania-clevenger"
+  },
+  {
+    "route": "/ashley-clevenger",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Ashley Clevenger — Business Technology, Growth &amp; Sales O",
+    "canonical": "https://ymbs.pro/ashley-clevenger"
+  },
+  {
+    "route": "/nestor-ortiz",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Nestor Ortiz — Leadership, Organizational Development &amp; ",
+    "canonical": "https://ymbs.pro/nestor-ortiz"
+  },
+  {
+    "route": "/analytics-dashboard",
+    "status": 200,
+    "location": "",
+    "robots": "noindex, nofollow",
+    "title": "Analytics Baseline Dashboard | YMBS",
+    "canonical": "https://ymbs.pro/analytics-dashboard"
+  },
+  {
+    "route": "/case-studies/law-firm-intake-automation",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Florida Law Firm — Intake &amp; CRM Automation Case Study | ",
+    "canonical": "https://ymbs.pro/case-studies/law-firm-intake-automation"
+  },
+  {
+    "route": "/case-studies/nonprofit-tech-consolidation",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Regional Nonprofit — Technology Stack Consolidation Case Stu",
+    "canonical": "https://ymbs.pro/case-studies/nonprofit-tech-consolidation"
+  },
+  {
+    "route": "/case-studies/law-firm-website-transformation",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Florida Law Firm — Website Transformation Case Study | YMBS",
+    "canonical": "https://ymbs.pro/case-studies/law-firm-website-transformation"
+  },
+  {
+    "route": "/case-studies/nonprofit-governance-operations",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Nonprofit — Governance &amp; Operations Overhaul Case Study ",
+    "canonical": "https://ymbs.pro/case-studies/nonprofit-governance-operations"
+  },
+  {
+    "route": "/case-studies/executive-readiness-stakeholder-comms",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Mission-Driven Organization — Executive Readiness &amp; Stak",
+    "canonical": "https://ymbs.pro/case-studies/executive-readiness-stakeholder-comms"
+  },
+  {
+    "route": "/assessments/results",
+    "status": 200,
+    "location": "",
+    "robots": "noindex, nofollow",
+    "title": "Assessment Results | YMBS",
+    "canonical": "https://ymbs.pro/assessments/results"
+  },
+  {
+    "route": "/services/technology/ai-automation",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "AI &amp; Business Automation | YMBS",
+    "canonical": "https://ymbs.pro/services/technology/ai-automation"
+  },
+  {
+    "route": "/services/technology/cybersecurity",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Cybersecurity &amp; Risk Protection | YMBS",
+    "canonical": "https://ymbs.pro/services/technology/cybersecurity"
+  },
+  {
+    "route": "/services/technology/connectivity",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Enterprise Connectivity &amp; Communications | YMBS",
+    "canonical": "https://ymbs.pro/services/technology/connectivity"
+  },
+  {
+    "route": "/services/technology/crm-workflow",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "CRM &amp; Workflow Systems | YMBS",
+    "canonical": "https://ymbs.pro/services/technology/crm-workflow"
+  },
+  {
+    "route": "/services/technology/website-seo",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Website Development &amp; SEO | YMBS",
+    "canonical": "https://ymbs.pro/services/technology/website-seo"
+  },
+  {
+    "route": "/services/technology/iot-physical-security",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "IoT &amp; Physical Security | YMBS",
+    "canonical": "https://ymbs.pro/services/technology/iot-physical-security"
+  },
+  {
+    "route": "/services/technology/digital-signage",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Digital Signage &amp; Display Systems | YMBS",
+    "canonical": "https://ymbs.pro/services/technology/digital-signage"
+  },
+  {
+    "route": "/services/technology/software-solutions",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Software Selection &amp; Implementation | YMBS",
+    "canonical": "https://ymbs.pro/services/technology/software-solutions"
+  },
+  {
+    "route": "/services/technology/mobility-workforce",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Mobility &amp; Workforce Enablement | YMBS",
+    "canonical": "https://ymbs.pro/services/technology/mobility-workforce"
+  },
+  {
+    "route": "/services/communications/reputation-management",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Online Reputation Management | YMBS",
+    "canonical": "https://ymbs.pro/services/communications/reputation-management"
+  },
+  {
+    "route": "/services/communications/executive-communications",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Executive Communications &amp; Readiness | YMBS",
+    "canonical": "https://ymbs.pro/services/communications/executive-communications"
+  },
+  {
+    "route": "/services/operations/governance",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Board Governance &amp; Decision Rights | YMBS",
+    "canonical": "https://ymbs.pro/services/operations/governance"
+  },
+  {
+    "route": "/services/leadership/community-engagement",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "Community Engagement &amp; Stakeholder Strategy | YMBS",
+    "canonical": "https://ymbs.pro/services/leadership/community-engagement"
+  },
+  {
+    "route": "/operations",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/technology",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/communications",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/leadership",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/blog",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/nonexistent-test-page",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/welcome-room",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/cybersecurity-services",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/a2p-tos",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/book/service-discovery",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/ymbs-demo",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/home-page-9693",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/terms-of-use",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/financial-oversight",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/home",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/index",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/preview/",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/technology/digital-signage-menu-boards.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/technology/iot-physical-security.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/technology/ai-communications.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/technology/online-reputation-management.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/technology-services/technology-assessment.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/technology/software-solutions.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/technology/mobility-workforce.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/technology/digital-growth.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/enterprise-connectivity.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/comprehensive-technology-audit-services.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/leadership/community-research-engagement.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/mission-foundation/board-governance-framework.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/mission-foundation/",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/nonprofit-strategy-development-vs-traditional-business-models.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/unlock-nonprofit-success-strategic-development.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/empowering-nonprofits-florida-ymbs-consulting-insights.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/blog/some-slug",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/leadership/michelle-griffith.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/technology-services/cybersecurity-risk-cleanup.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/leadership/strategic-planning-alignment.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/smb-cybersecurity-playbook.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/technology-services/reporting-visibility.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/technology/cybersecurity-risk.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/mission-foundation/strategic-alignment-framework.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/legal-software/mycase.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/leadership/ashley-clevenger.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/elevating-public-voice.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/affiliate-program.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/strengthening-organizational-governance.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  },
+  {
+    "route": "/technology.html",
+    "status": 200,
+    "location": "",
+    "robots": "",
+    "title": "",
+    "canonical": ""
+  }
+]

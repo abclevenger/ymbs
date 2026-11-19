@@ -1,0 +1,500 @@
+[
+  {
+    "url": "https://ymbs.pro/",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/operations",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/operations",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/technology",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/technology",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/leadership",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/leadership",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/communications",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/communications",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/technology/ai-automation",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/technology/ai-automation",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/technology/cybersecurity",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/technology/cybersecurity",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/technology/connectivity",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/technology/connectivity",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/technology/crm-workflow",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/technology/crm-workflow",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/technology/website-seo",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/technology/website-seo",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/technology/iot-physical-security",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/technology/iot-physical-security",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/technology/digital-signage",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/technology/digital-signage",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/technology/software-solutions",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/technology/software-solutions",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/technology/mobility-workforce",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/technology/mobility-workforce",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/communications/reputation-management",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/communications/reputation-management",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/communications/executive-communications",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/communications/executive-communications",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/operations/governance",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/operations/governance",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/leadership/community-engagement",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/leadership/community-engagement",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/why-your-new-tech-stack-failed",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/why-your-new-tech-stack-failed",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/tribal-knowledge-trap-nonprofits",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/tribal-knowledge-trap-nonprofits",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/getting-your-board-to-make-decisions",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/getting-your-board-to-make-decisions",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/cybersecurity-basics-mission-driven-orgs",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/cybersecurity-basics-mission-driven-orgs",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/when-to-hire-fractional-coo",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/when-to-hire-fractional-coo",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/aligning-internal-communications-change",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/aligning-internal-communications-change",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/nonprofit-audit-readiness-checklist",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/nonprofit-audit-readiness-checklist",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/evaluating-legal-practice-management-software",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/evaluating-legal-practice-management-software",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/preparing-difficult-board-presentation",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/preparing-difficult-board-presentation",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/law-firm-intake-automation-guide",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/law-firm-intake-automation-guide",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/nonprofit-board-governance-essentials",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/nonprofit-board-governance-essentials",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/fractional-coo-vs-consultant",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/fractional-coo-vs-consultant",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/crm-selection-nonprofits-guide",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/crm-selection-nonprofits-guide",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/crisis-communications-readiness",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/crisis-communications-readiness",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/ai-for-small-business-reality-check",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/ai-for-small-business-reality-check",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/nonprofit-succession-planning-guide",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/nonprofit-succession-planning-guide",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/insights/law-firm-cybersecurity-requirements",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/insights/law-firm-cybersecurity-requirements",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/assessments/cyber-readiness",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/assessments/cyber-readiness",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/assessments/technology",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/assessments/technology",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/assessments/seo",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/assessments/seo",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/assessments/system-health",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/assessments/system-health",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/assessments",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/assessments",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/solutions/organizational-growth",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/solutions/organizational-growth",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/solutions/ai-adoption",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/solutions/ai-adoption",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/solutions/technology-modernization",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/solutions/technology-modernization",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/solutions/organizational-change",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/solutions/organizational-change",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/contact",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/contact",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/policy",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/policy",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/terms",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/terms",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/a2p",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/a2p",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/accessibility",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/accessibility",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/elevation",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/elevation",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/services/seo",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/services/seo",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/portfolio",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/portfolio",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/team",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/team",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/sitemap",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/sitemap",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/suppliers",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/suppliers",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/support",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/support",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/llm-knowledge",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/llm-knowledge",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/scale",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/scale",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/scale/assessment",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/scale/assessment",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/michelle-griffith",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/michelle-griffith",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/executive-readiness-intensive",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/executive-readiness-intensive",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/law-firm-pr-system",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/law-firm-pr-system",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/nonprofit-consulting",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/nonprofit-consulting",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/law-firm-technology",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/law-firm-technology",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/professional-services",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/professional-services",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/mission-driven-organizations",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/mission-driven-organizations",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/partners",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/partners",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/fractional-coo",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/fractional-coo",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/strategic-planning",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/strategic-planning",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/mission-foundation",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/mission-foundation",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/integrated-executive-advisory",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/integrated-executive-advisory",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/company-profile",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/company-profile",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/client-results",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/client-results",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/thania-clevenger",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/thania-clevenger",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/ashley-clevenger",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/ashley-clevenger",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/nestor-ortiz",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/nestor-ortiz",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/case-studies/law-firm-intake-automation",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/case-studies/law-firm-intake-automation",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/case-studies/nonprofit-tech-consolidation",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/case-studies/nonprofit-tech-consolidation",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/case-studies/law-firm-website-transformation",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/case-studies/law-firm-website-transformation",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/case-studies/nonprofit-governance-operations",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/case-studies/nonprofit-governance-operations",
+    "robots": ""
+  },
+  {
+    "url": "https://ymbs.pro/case-studies/executive-readiness-stakeholder-comms",
+    "status": 200,
+    "finalUrl": "https://ymbs.pro/case-studies/executive-readiness-stakeholder-comms",
+    "robots": ""
+  }
+]
