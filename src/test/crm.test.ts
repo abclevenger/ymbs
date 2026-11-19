@@ -83,7 +83,7 @@ describe("submitLead — successful submission", () => {
     expect(body.formData.email).toBe("jane@example.com");
   });
 
-  it("maps custom fields using the contact.* convention", async () => {
+  it("maps SCALE custom fields using registered CRM field IDs", async () => {
     await submitLead({
       ...baseInput,
       customFields: {
@@ -92,8 +92,8 @@ describe("submitLead — successful submission", () => {
       },
     });
     const body = JSON.parse(fetchSpy.mock.calls[0][1].body);
-    expect(body.formData["contact.scale_score"]).toBe("72");
-    expect(body.formData["contact.scale_answers"]).toBe('{"S":[3,2]}');
+    expect(body.formData["NwWqffKEn8vxG07oj8T2"]).toBe("72");
+    expect(body.formData["A4xFZ7sRUJwl8ygRCSB5"]).toBe('{"S":[3,2]}');
   });
 
   it("includes human-readable formLabels parallel to formData", async () => {
@@ -190,21 +190,21 @@ describe("CRM field map — assessment scores", () => {
     expect(CRM_FIELDS.systemHealthScore).toBe("contact.system_health_score");
   });
 
-  it("defines all six SCALE score fields", () => {
-    expect(CRM_FIELDS.scaleScore).toBe("contact.scale_score");
-    expect(CRM_FIELDS.scaleStructureScore).toBe(
-      "contact.scale_structure_score",
-    );
-    expect(CRM_FIELDS.scaleCultureScore).toBe("contact.scale_culture_score");
-    expect(CRM_FIELDS.scaleAlignmentScore).toBe(
-      "contact.scale_alignment_score",
-    );
+  it("defines all seven SCALE fields with registered CRM IDs", () => {
+    expect(CRM_FIELDS.scaleScore).toBe("NwWqffKEn8vxG07oj8T2");
+    expect(CRM_FIELDS.scaleStructureScore).toBe("0Zsw4UlMjYSMXymuw5Uz");
+    expect(CRM_FIELDS.scaleCultureScore).toBe("FeNTIPS1k10EjBiOvgVw");
+    expect(CRM_FIELDS.scaleAlignmentScore).toBe("ZLJURnFP4llENc8kCZUZ");
     expect(CRM_FIELDS.scaleLiabilityGovernanceScore).toBe(
-      "contact.scale_liability_governance_score",
+      "LvPzihNTrjT2jEgA8GwH",
     );
-    expect(CRM_FIELDS.scaleExecutionScore).toBe(
-      "contact.scale_execution_score",
-    );
+    expect(CRM_FIELDS.scaleExecutionScore).toBe("0W8c85WlI7mHxdEBW6Mq");
+    expect(CRM_FIELDS.scaleAnswers).toBe("A4xFZ7sRUJwl8ygRCSB5");
+  });
+
+  it("defines assessment type and result with registered CRM IDs", () => {
+    expect(CRM_FIELDS.assessmentType).toBe("Vvt1cTv7xKfUFjPOHY5r");
+    expect(CRM_FIELDS.assessmentResult).toBe("syvXHNJXoO5iQRzrnW2k");
   });
 
   it("defines discrete support dynamic-field mappings (not flattened)", () => {

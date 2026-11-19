@@ -235,6 +235,22 @@
   }
 }
 
+/* Story stage active: smooth fade-up when the dominant stage changes */
+.story-stage-active {
+  animation: storyStageFadeIn 0.4s ease-out both;
+}
+
+@keyframes storyStageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Reduced motion: render all content immediately, no transforms */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -244,5 +260,10 @@
     animation-delay: 0ms !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+  .story-stage-active {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

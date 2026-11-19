@@ -160,7 +160,7 @@ export default function BusinessTransformationStory() {
   return (
     <section
       ref={sectionRef}
-      className={`relative bg-dark-section ${reduced ? "" : "h-[130vh] lg:h-[150vh]"}`}
+      className={`relative bg-dark-section ${reduced ? "" : "h-[110vh] lg:h-[120vh]"}`}
       aria-label="How YMBS transforms a fragmented business into a coordinated organization"
     >
       {/* Sticky stage — split into text-safe zone + visualization zone */}
@@ -169,24 +169,36 @@ export default function BusinessTransformationStory() {
         style={{ background: NAVY }}
       >
         {/* ---- TEXT-SAFE ZONE (left on desktop, top on mobile) ---- */}
+        {/* Only the dominant stage is rendered — no crossfade stacking. */}
         <div className="relative z-20 w-full flex-1 lg:flex-none lg:w-[40%] flex items-center px-6 md:px-10 lg:pl-[6vw] lg:pr-10 pt-16 lg:pt-0 pb-4 lg:pb-0 pointer-events-none">
           <div className="relative w-full max-w-xl min-h-[200px] lg:min-h-[280px]">
-            {stages.map((stage, idx) => {
-              const isFirst = idx === 0;
-              const isLast = idx === stages.length - 1;
-              const vis =
-                reduced && stage.id === "coordinated"
-                  ? 1
-                  : stageVis(p, stage.start, stage.end, isFirst, isLast);
-              if (vis <= 0.001) return null;
+            {(() => {
+              // Find the stage with the highest visibility at current progress
+              let activeIdx = 0;
+              let maxVis = -1;
+              for (let idx = 0; idx < stages.length; idx++) {
+                const isFirst = idx === 0;
+                const isLast = idx === stages.length - 1;
+                const vis =
+                  reduced && stages[idx].id === "coordinated"
+                    ? 1
+                    : stageVis(
+                        p,
+                        stages[idx].start,
+                        stages[idx].end,
+                        isFirst,
+                        isLast,
+                      );
+                if (vis > maxVis) {
+                  maxVis = vis;
+                  activeIdx = idx;
+                }
+              }
+              const stage = stages[activeIdx];
               return (
                 <div
                   key={stage.id}
-                  className="absolute top-0 left-0 w-full"
-                  style={{
-                    opacity: vis,
-                    transform: `translateY(${lerp(24, 0, smoothstep(vis))}px)`,
-                  }}
+                  className="story-stage-active relative w-full"
                 >
                   <h2
                     className="text-2xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.1] text-balance mb-3"
@@ -207,7 +219,7 @@ export default function BusinessTransformationStory() {
                   )}
                 </div>
               );
-            })}
+            })()}
           </div>
         </div>
 

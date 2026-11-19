@@ -48,7 +48,7 @@ export const CRM_FIELDS = {
   scaleAlignmentScore: "ZLJURnFP4llENc8kCZUZ",
   scaleLiabilityGovernanceScore: "LvPzihNTrjT2jEgA8GwH",
   scaleExecutionScore: "0W8c85WlI7mHxdEBW6Mq",
-  scaleAnswers: "YtKXLUF1Nyx6ndpf4jsi",
+  scaleAnswers: "A4xFZ7sRUJwl8ygRCSB5",
 
   // Assessment scores
   cyberScore: "contact.cyber_score", // REQUIRES_CRM_FIELD_CONFIRMATION
