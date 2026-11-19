@@ -1,4 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { SiteLink as Link } from "./SiteLink";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
