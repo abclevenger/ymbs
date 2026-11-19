@@ -48,6 +48,7 @@ export function ScaleLeadCapture({
                   id="firstName"
                   name="firstName"
                   required
+                  autoComplete="given-name"
                   placeholder="John"
                 />
               </div>
@@ -57,6 +58,7 @@ export function ScaleLeadCapture({
                   id="lastName"
                   name="lastName"
                   required
+                  autoComplete="family-name"
                   placeholder="Doe"
                 />
               </div>
@@ -68,6 +70,8 @@ export function ScaleLeadCapture({
                 name="email"
                 type="email"
                 required
+                autoComplete="email"
+                inputMode="email"
                 placeholder="john@company.com"
               />
             </div>
@@ -76,6 +80,7 @@ export function ScaleLeadCapture({
               <Input
                 id="organization"
                 name="organization"
+                autoComplete="organization"
                 placeholder="Acme Corp"
               />
             </div>

@@ -41,10 +41,46 @@ export default function ScaleAssessment() {
   const [answers, setAnswers] = useState<Record<string, Answer[]>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [restored, setRestored] = useState(false);
 
   useEffect(() => {
     track.highIntentPageView("/scale/assessment", "SCALE");
   }, []);
+
+  // Draft persistence: let visitors reload or return without losing progress.
+  useEffect(() => {
+    if (stage === "intro" && !restored) {
+      setRestored(true);
+      try {
+        const raw = localStorage.getItem("ymbs_scale_draft");
+        if (raw) {
+          const saved = JSON.parse(raw) as Record<string, Answer[]>;
+          const savedCount = Object.values(saved).reduce(
+            (s, a) => s + a.length,
+            0,
+          );
+          if (savedCount > 0) {
+            setAnswers(saved);
+            setStage("quiz");
+            track.assessmentFunnelStep("SCALE", "draft_restored");
+          }
+        }
+      } catch {
+        // Corrupt or unavailable draft — start fresh.
+      }
+    }
+  }, [stage, restored]);
+
+  // Persist answers as they are given.
+  useEffect(() => {
+    if (Object.keys(answers).length > 0) {
+      try {
+        localStorage.setItem("ymbs_scale_draft", JSON.stringify(answers));
+      } catch {
+        // Storage unavailable — assessment still works without persistence.
+      }
+    }
+  }, [answers]);
 
   const totalQuestions = pillars.reduce(
     (sum, p) => sum + p.questions.length,
@@ -95,11 +131,26 @@ export default function ScaleAssessment() {
       pillars.length,
   );
 
+  const goBack = () => {
+    if (currentQuestion > 0) {
+      setCurrentQuestion(currentQuestion - 1);
+    } else if (currentPillar > 0) {
+      const prevPillar = currentPillar - 1;
+      setCurrentPillar(prevPillar);
+      setCurrentQuestion(pillars[prevPillar].questions.length - 1);
+    }
+  };
+
   const reset = () => {
     setAnswers({});
     setCurrentPillar(0);
     setCurrentQuestion(0);
     setSubmitError(null);
+    try {
+      localStorage.removeItem("ymbs_scale_draft");
+    } catch {
+      // Storage unavailable — reset still works in-memory.
+    }
     setStage("intro");
   };
 
@@ -313,43 +364,70 @@ export default function ScaleAssessment() {
                 </span>
               </div>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-10 leading-tight">
-                {pillars[currentPillar].questions[currentQuestion].text}
-              </h2>
+              <fieldset>
+                <legend
+                  id={`scale-q-${currentPillar}-${currentQuestion}`}
+                  className="text-2xl md:text-3xl font-bold text-zinc-900 mb-3 leading-tight"
+                >
+                  {pillars[currentPillar].questions[currentQuestion].text}
+                </legend>
+                <p className="text-sm text-zinc-500 mb-8">
+                  Choose the option that fits best. You can review earlier
+                  answers using the Back button.
+                </p>
 
-              <div className="space-y-3">
-                {scaleOptions.map((opt) => (
-                  <button
-                    key={opt.value}
-                    onClick={() => handleAnswer(opt.value as Answer)}
-                    className={`w-full text-left p-5 rounded-xl border-2 transition-all duration-200 flex items-center justify-between group ${
+                <div
+                  role="radiogroup"
+                  aria-labelledby={`scale-q-${currentPillar}-${currentQuestion}`}
+                  className="space-y-3"
+                >
+                  {scaleOptions.map((opt) => {
+                    const selected =
                       answers[pillars[currentPillar].letter]?.[
                         currentQuestion
-                      ] === opt.value
-                        ? "border-primary bg-primary/5"
-                        : "border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50"
-                    }`}
-                  >
-                    <span className="font-medium text-zinc-800 text-lg">
-                      {opt.label}
-                    </span>
-                    <div
-                      className={`w-6 h-6 rounded-full border-2 transition-all ${
-                        answers[pillars[currentPillar].letter]?.[
-                          currentQuestion
-                        ] === opt.value
-                          ? "border-primary bg-primary"
-                          : "border-zinc-300 group-hover:border-zinc-400"
-                      }`}
-                    >
-                      {answers[pillars[currentPillar].letter]?.[
-                        currentQuestion
-                      ] === opt.value && (
-                        <CheckCircle2 className="w-full h-full text-black p-0.5" />
-                      )}
-                    </div>
-                  </button>
-                ))}
+                      ] === opt.value;
+                    return (
+                      <button
+                        key={opt.value}
+                        onClick={() => handleAnswer(opt.value as Answer)}
+                        role="radio"
+                        aria-checked={selected}
+                        className={`w-full text-left p-5 rounded-xl border-2 transition-all duration-200 flex items-center justify-between group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+                          selected
+                            ? "border-primary bg-primary/5"
+                            : "border-zinc-200 hover:border-zinc-300 hover:bg-zinc-50"
+                        }`}
+                      >
+                        <span className="font-medium text-zinc-800 text-lg">
+                          {opt.label}
+                        </span>
+                        <div
+                          className={`w-6 h-6 rounded-full border-2 transition-all ${
+                            selected
+                              ? "border-primary bg-primary"
+                              : "border-zinc-300 group-hover:border-zinc-400"
+                          }`}
+                        >
+                          {selected && (
+                            <CheckCircle2 className="w-full h-full text-black p-0.5" />
+                          )}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </fieldset>
+
+              <div className="mt-8 flex justify-start">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={goBack}
+                  disabled={currentPillar === 0 && currentQuestion === 0}
+                  className="font-semibold border-zinc-300 hover:bg-zinc-50"
+                >
+                  <RotateCcw className="mr-2 w-4 h-4 rotate-180" /> Back
+                </Button>
               </div>
             </motion.div>
           </div>

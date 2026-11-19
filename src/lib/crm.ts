@@ -198,10 +198,22 @@ export async function submitLead(input: SubmitLeadInput): Promise<CrmResult> {
     userAgent: typeof navigator !== "undefined" ? navigator.userAgent : "",
     trackingId: TRACKING_ID,
     locationId: LOCATION_ID,
-    sessionId:
-      typeof crypto !== "undefined" && "randomUUID" in crypto
+    // Reuse the site's analytics session (set by /__vibe/analytics.js) so the
+    // submission joins the visit's page views; fall back to a fresh id when
+    // the cookie is absent or unreadable (sandboxed iframe).
+    sessionId: (() => {
+      try {
+        const sid = document.cookie.match(
+          /(?:^|;\s*)__vibe_sid=([0-9a-f-]{36})(?:;|$)/,
+        )?.[1];
+        if (sid) return sid;
+      } catch {
+        // document.cookie can throw in sandboxed iframes — fall through.
+      }
+      return typeof crypto !== "undefined" && "randomUUID" in crypto
         ? crypto.randomUUID()
-        : `${Date.now()}-${Math.random()}`,
+        : `${Date.now()}-${Math.random()}`;
+    })(),
     properties: {
       deviceType: isMobile() ? "mobile" : "desktop",
       source,

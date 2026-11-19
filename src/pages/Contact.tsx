@@ -525,6 +525,7 @@ export default function Contact() {
                               id="firstName"
                               name="firstName"
                               required
+                              autoComplete="given-name"
                               placeholder="John"
                               onBlur={(e) =>
                                 handleFieldBlur("firstName", e.target.value)
@@ -544,6 +545,7 @@ export default function Contact() {
                               id="lastName"
                               name="lastName"
                               required
+                              autoComplete="family-name"
                               placeholder="Doe"
                             />
                           </div>
@@ -555,6 +557,8 @@ export default function Contact() {
                             name="email"
                             type="email"
                             required
+                            autoComplete="email"
+                            inputMode="email"
                             placeholder="john@example.com"
                             onBlur={(e) =>
                               handleFieldBlur("email", e.target.value)
@@ -574,6 +578,8 @@ export default function Contact() {
                               id="phone"
                               name="phone"
                               type="tel"
+                              autoComplete="tel"
+                              inputMode="tel"
                               placeholder="(555) 123-4567"
                             />
                           </div>
@@ -582,6 +588,7 @@ export default function Contact() {
                             <Input
                               id="company"
                               name="company"
+                              autoComplete="organization"
                               placeholder="Acme Corp"
                             />
                           </div>
