@@ -54,11 +54,6 @@ const CLIENTS = [
     alt: "Asheville logo",
   },
   {
-    name: "YMBS Partner",
-    src: "https://files.leadconnectorhq.com/file/6aff75f19463e812543c42dd/bf9672d7-b887-4a14-8943-209b13cc99db.png",
-    alt: "YMBS Partner logo",
-  },
-  {
     name: "Alliance Party",
     src: "https://files.leadconnectorhq.com/file/6aff76cbff777b8c6ec55125/alliance-party-logo-1.png",
     alt: "Alliance Party logo",
