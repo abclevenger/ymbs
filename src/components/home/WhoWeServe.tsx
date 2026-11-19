@@ -1,58 +1,46 @@
-const audiences = [
-  {
-    title: "Small & Mid-Sized Businesses",
-    desc: "You need senior-level expertise but can't justify — or aren't ready for — a full executive team. We plug in exactly where you need us.",
-  },
-  {
-    title: "Nonprofits",
-    desc: "Boards, funders, and communities are watching. We help you build governance, systems, and messaging that hold up under scrutiny.",
-  },
-  {
-    title: "Law Firms",
-    desc: "Reputation is the product. We help firms modernize operations and technology while keeping partner communication and client trust intact.",
-  },
-  {
-    title: "Mission-Driven Organizations",
-    desc: "Purpose-first organizations outside traditional nonprofit structure. We help mission-led teams build discipline to match their ambition.",
-  },
-];
+import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
+import { whoWeHelp } from "@/components/layout/navData";
 
-/**
- * Who we serve — the backbone of America. Four audience cards in one row
- * on desktop (lg:grid-cols-4).
- */
+/** Match the five primary navigation audiences using a single source of truth. */
 export default function WhoWeServe() {
   return (
-    <section className="py-16 md:py-24 bg-light-section">
+    <section className="py-14 md:py-20 bg-light-section" aria-labelledby="who-we-serve-heading">
       <div className="max-w-[1280px] mx-auto px-6">
-        <div className="text-center mb-12 max-w-2xl mx-auto">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary mb-4">
+        <div className="text-center mb-9 max-w-3xl mx-auto">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary mb-3">
             Who we serve
           </p>
           <h2
+            id="who-we-serve-heading"
             className="text-3xl md:text-4xl font-bold mb-4 text-[#1A2433] tracking-tight leading-[1.1]"
             style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           >
-            The backbone of America.
+            Built for the organizations that keep America moving.
           </h2>
+          <p className="text-base md:text-lg text-zinc-600 leading-relaxed">
+            Whether you lead a growing business, professional practice, nonprofit, or
+            purpose-led organization, we help you bring the right expertise to your next priority.
+          </p>
         </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {audiences.map((a, i) => (
-            <div
-              key={i}
-              className="card-light rounded-2xl p-6 md:p-8 flex flex-col h-full"
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+          {whoWeHelp.map((audience) => (
+            <Link
+              key={audience.href}
+              to={audience.href}
+              className="group card-light rounded-2xl p-6 flex flex-col h-full border border-zinc-200 hover:border-primary/50 hover:shadow-md transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
               <h3
-                className="text-[1.2rem] font-bold mb-3.5 text-[#1A2433] leading-tight"
+                className="text-lg font-bold mb-3 text-[#1A2433] leading-tight"
                 style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
-                {a.title}
+                {audience.title}
               </h3>
-              <p className="text-[15px] text-zinc-600 leading-relaxed">
-                {a.desc}
-              </p>
-            </div>
+              <p className="text-sm text-zinc-600 leading-relaxed flex-1">{audience.description}</p>
+              <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-[#8C6700] group-hover:underline">
+                See how we help <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+              </span>
+            </Link>
           ))}
         </div>
       </div>
