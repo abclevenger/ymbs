@@ -11,6 +11,8 @@
 
 export interface StoryStage {
   id: "diagnose" | "fragmented" | "align" | "coordinated";
+  /** Short chapter name shown on the chapter navigation */
+  chapter: string;
   /** Window of overall scroll progress this stage occupies */
   start: number;
   end: number;
@@ -21,6 +23,7 @@ export interface StoryStage {
 export const stages: StoryStage[] = [
   {
     id: "diagnose",
+    chapter: "Diagnose",
     start: 0,
     end: 0.25,
     headline: "First, we find what's actually holding you back.",
@@ -28,6 +31,7 @@ export const stages: StoryStage[] = [
   },
   {
     id: "fragmented",
+    chapter: "Strain",
     start: 0.25,
     end: 0.5,
     headline: "Growth shouldn't create more chaos.",
@@ -35,6 +39,7 @@ export const stages: StoryStage[] = [
   },
   {
     id: "align",
+    chapter: "Align",
     start: 0.5,
     end: 0.75,
     headline: "Then we bring in exactly the expertise you need.",
@@ -42,6 +47,7 @@ export const stages: StoryStage[] = [
   },
   {
     id: "coordinated",
+    chapter: "Coordinate",
     start: 0.75,
     end: 1,
     headline: "One coordinated advisory team.",
@@ -49,12 +55,46 @@ export const stages: StoryStage[] = [
   },
 ];
 
-/** The four disciplines — anchor positions in the final coordinated layout */
-export const disciplines = [
-  { id: "operations", label: "Operations", angle: 225 }, // bottom-left
-  { id: "technology", label: "Technology", angle: 315 }, // bottom-right
-  { id: "communications", label: "Communications", angle: 135 }, // top-left
-  { id: "leadership", label: "Leadership", angle: 45 }, // top-right
+export type DisciplineId =
+  "operations" | "technology" | "communications" | "leadership";
+
+export interface Discipline {
+  id: DisciplineId;
+  label: string;
+  href: string;
+  blurb: string;
+}
+
+/** The four disciplines — compass positions live in the component */
+export const disciplines: readonly Discipline[] = [
+  {
+    id: "operations",
+    label: "Operations",
+    href: "/services/operations",
+    blurb:
+      "Structure, processes, and execution that let the business scale intentionally.",
+  },
+  {
+    id: "technology",
+    label: "Technology",
+    href: "/services/technology",
+    blurb:
+      "Systems, automation, data, and cybersecurity aligned to how you actually work.",
+  },
+  {
+    id: "communications",
+    label: "Communications",
+    href: "/services/communications",
+    blurb:
+      "Executive messaging, marketing, and reputation that sound like one organization.",
+  },
+  {
+    id: "leadership",
+    label: "Leadership",
+    href: "/services/leadership",
+    blurb:
+      "Governance, policies, and people practices that keep everyone pulling together.",
+  },
 ] as const;
 
 /** SCALE™ framework markers */
