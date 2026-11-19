@@ -123,7 +123,9 @@ export default function ClientResults() {
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              {VERIFIED_FRAMEWORKS.map((fw, i) => (
+              {VERIFIED_FRAMEWORKS.filter(
+                (fw) => fw.status !== "pending-review",
+              ).map((fw, i) => (
                 <FrameworkProof key={i} data={fw} variant="light" />
               ))}
             </div>
@@ -169,9 +171,11 @@ export default function ClientResults() {
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              {VERIFIED_TRANSFORMATIONS.map((t, i) => (
-                <BeforeAfter key={i} data={t} variant="light" />
-              ))}
+              {VERIFIED_TRANSFORMATIONS.filter((t) => t.verified).map(
+                (t, i) => (
+                  <BeforeAfter key={i} data={t} variant="light" />
+                ),
+              )}
             </div>
           </div>
         </section>
@@ -201,28 +205,32 @@ export default function ClientResults() {
           </section>
         )}
 
-        {/* TESTIMONIALS */}
-        <section className="py-20 bg-white border-y border-zinc-200">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="text-center mb-12">
-              <h2
-                className="text-3xl md:text-4xl font-bold mb-4 text-[#1A2433]"
-                style={serif}
-              >
-                What Clients Say
-              </h2>
-              <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-                Role-attributed testimonials. Named testimonials will be added
-                as permissions are confirmed.
-              </p>
+        {/* TESTIMONIALS (shown only when verified testimonials exist) */}
+        {VERIFIED_TESTIMONIALS.some((t) => t.verified) && (
+          <section className="py-20 bg-white border-y border-zinc-200">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="text-center mb-12">
+                <h2
+                  className="text-3xl md:text-4xl font-bold mb-4 text-[#1A2433]"
+                  style={serif}
+                >
+                  What Clients Say
+                </h2>
+                <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+                  Role-attributed testimonials. Named testimonials will be added
+                  as permissions are confirmed.
+                </p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {VERIFIED_TESTIMONIALS.filter((t) => t.verified).map(
+                  (t, i) => (
+                    <Testimonial key={i} data={t} variant="light" />
+                  ),
+                )}
+              </div>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {VERIFIED_TESTIMONIALS.map((t, i) => (
-                <Testimonial key={i} data={t} variant="light" />
-              ))}
-            </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* CTA */}
         <section className="py-24 bg-dark-section text-white text-center px-6 relative overflow-hidden">

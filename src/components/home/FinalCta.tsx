@@ -40,22 +40,22 @@ export default function FinalCta() {
           <Button
             className="btn-glow bg-primary text-black hover:bg-primary/90 font-bold px-10 h-14 text-base rounded-full transition-all hover:-translate-y-1"
             onClick={() => {
-              track.assessmentStarted("SCALE");
-              track.assessmentFunnelStep("SCALE", "final_cta");
-              navigate("/scale/assessment");
+              track.discoveryCallClick("final_cta");
+              navigate("/contact");
             }}
           >
-            Take the Free SCALE™ Assessment
+            Get Clarity
           </Button>
           <Button
             variant="outline"
             className="bg-white/5 border-white/15 text-white hover:bg-white/10 font-bold px-10 h-14 text-base rounded-full transition-all backdrop-blur-md"
             onClick={() => {
-              track.discoveryCallClick("final_cta");
-              navigate("/contact");
+              track.assessmentStarted("SCALE");
+              track.assessmentFunnelStep("SCALE", "final_cta");
+              navigate("/scale/assessment");
             }}
           >
-            Talk to an Advisor <ArrowRight className="ml-2 w-4 h-4" />
+            Take the SCALE™ Assessment <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
         </div>
         <p className="text-sm text-zinc-400 font-medium tracking-wide mb-6">

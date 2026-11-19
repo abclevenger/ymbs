@@ -7,16 +7,16 @@ import ScalePreviewModal from "@/components/ScalePreviewModal";
 
 const proofPoints = [
   {
+    icon: Users,
+    label: "Fractional engagement",
+  },
+  {
     icon: ShieldCheck,
     label: "Senior expertise",
   },
   {
     icon: Layers,
     label: "Ready-to-use frameworks",
-  },
-  {
-    icon: Users,
-    label: "Fractional engagement",
   },
   {
     icon: Wrench,
@@ -104,31 +104,31 @@ export default function HeroSection() {
                 <button
                   className="btn-glow w-full sm:w-auto bg-primary text-black hover:bg-primary/90 font-bold text-sm md:text-base px-8 md:px-10 h-14 rounded-full transition-all duration-300 hover:-translate-y-1"
                   onClick={() => {
+                    track.discoveryCallClick("hero");
+                    navigate("/contact");
+                  }}
+                >
+                  Get Clarity
+                </button>
+                <button
+                  className="w-full sm:w-auto bg-white/5 border border-white/15 text-white hover:bg-white/10 hover:text-white font-semibold text-sm md:text-base px-8 md:px-10 h-14 rounded-full transition-all duration-300 backdrop-blur-md"
+                  onClick={() => {
                     track.assessmentStarted("SCALE");
                     track.assessmentFunnelStep("SCALE", "hero_preview_open");
                     setScaleOpen(true);
                   }}
                 >
-                  Take the Free SCALE™ Assessment
-                </button>
-                <button
-                  className="w-full sm:w-auto bg-white/5 border border-white/15 text-white hover:bg-white/10 hover:text-white font-semibold text-sm md:text-base px-8 md:px-10 h-14 rounded-full transition-all duration-300 backdrop-blur-md"
-                  onClick={() => {
-                    track.discoveryCallClick("hero");
-                    navigate("/contact");
-                  }}
-                >
-                  Talk to an Advisor
+                  Take the SCALE™ Assessment
                 </button>
               </div>
               {/* CTA microcopy — each line sits directly beneath its button */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-4">
+                <p className="text-xs text-zinc-400 font-medium tracking-wide sm:flex-1 sm:max-w-[220px]">
+                  30 minutes • No obligation • Leave with clearer priorities
+                </p>
                 <p className="text-xs text-zinc-400 font-medium tracking-wide sm:flex-1 sm:max-w-[260px]">
                   A practical starting point to identify where the organization
                   may need attention.
-                </p>
-                <p className="text-xs text-zinc-400 font-medium tracking-wide sm:flex-1 sm:max-w-[220px]">
-                  30 minutes • No obligation • Leave with clearer priorities
                 </p>
               </div>
             </div>

@@ -61,6 +61,9 @@ export default function Index() {
       {/* 5 — Who we serve (light) */}
       <WhoWeServe />
 
+      {/* 5a — Problem-based discovery (light) */}
+      <ProblemDiscovery />
+
       {/* 5b — Self-identification signals (light) */}
       <SelfIdentification />
 
