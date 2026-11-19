@@ -58,38 +58,15 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Who We Help */}
+          {/* Who We Help — same audience order as primary navigation */}
           <div>
             <h4 className="font-bold mb-3 text-white text-sm">Who We Help</h4>
             <ul className="space-y-1.5 text-xs text-white/60">
-              <li>
-                <a href="/services" className="hover:text-primary">
-                  Small & Mid-Sized Businesses
-                </a>
-              </li>
-              <li>
-                <a href="/nonprofit-consulting" className="hover:text-primary">
-                  Nonprofits
-                </a>
-              </li>
-              <li>
-                <a href="/law-firm-technology" className="hover:text-primary">
-                  Law Firms
-                </a>
-              </li>
-              <li>
-                <a href="/professional-services" className="hover:text-primary">
-                  Professional Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/mission-driven-organizations"
-                  className="hover:text-primary"
-                >
-                  Mission-Driven Orgs
-                </a>
-              </li>
+              <li><a href="/services" className="hover:text-primary">Small &amp; Mid-Sized Businesses</a></li>
+              <li><a href="/professional-services" className="hover:text-primary">Professional Services Firms</a></li>
+              <li><a href="/law-firm-technology" className="hover:text-primary">Law Firms</a></li>
+              <li><a href="/nonprofit-consulting" className="hover:text-primary">Nonprofits</a></li>
+              <li><a href="/mission-driven-organizations" className="hover:text-primary">Mission-Driven Organizations</a></li>
             </ul>
           </div>
 
