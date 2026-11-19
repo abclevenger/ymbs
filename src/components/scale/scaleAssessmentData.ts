@@ -126,6 +126,47 @@ export const pillars: Pillar[] = [
   },
 ];
 
+/** Restore an existing SCALE draft and identify the first unanswered question. */
+export function restoreScaleDraft(raw: unknown): {
+  answers: Record<string, Answer[]>;
+  pillarIndex: number;
+  questionIndex: number;
+  complete: boolean;
+} | null {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
+  const source = raw as Record<string, unknown>;
+  const answers: Record<string, Answer[]> = {};
+  let answered = 0;
+  let firstMissing: { pillarIndex: number; questionIndex: number } | null = null;
+
+  for (let pillarIndex = 0; pillarIndex < pillars.length; pillarIndex++) {
+    const pillar = pillars[pillarIndex];
+    const stored = source[pillar.letter];
+    const values: Answer[] = [];
+    if (Array.isArray(stored)) {
+      for (let j = 0; j < Math.min(stored.length, pillar.questions.length); j++) {
+        const candidate: unknown = stored[j];
+        // Invalid values and sparse entries must not count as answered.
+        if (typeof candidate !== "number" || !Number.isInteger(candidate) || candidate < 0 || candidate > 4) break;
+        values.push(candidate as Answer);
+      }
+    }
+    if (values.length > 0) answers[pillar.letter] = values;
+    answered += values.length;
+    if (!firstMissing && values.length < pillar.questions.length) {
+      firstMissing = { pillarIndex, questionIndex: values.length };
+    }
+  }
+
+  if (answered === 0) return null;
+  return {
+    answers,
+    pillarIndex: firstMissing?.pillarIndex ?? pillars.length - 1,
+    questionIndex: firstMissing?.questionIndex ?? pillars[pillars.length - 1].questions.length - 1,
+    complete: firstMissing === null,
+  };
+}
+
 export const scaleOptions = [
   { value: 0, label: "Strongly Disagree" },
   { value: 1, label: "Disagree" },

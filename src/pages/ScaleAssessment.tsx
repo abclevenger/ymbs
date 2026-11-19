@@ -20,6 +20,7 @@ import {
   scaleOptions,
   getScoreLabel,
   type Answer,
+  restoreScaleDraft,
 } from "@/components/scale/scaleAssessmentData";
 import { ScaleLeadCapture } from "@/components/scale/ScaleLeadCapture";
 
@@ -54,14 +55,12 @@ export default function ScaleAssessment() {
       try {
         const raw = localStorage.getItem("ymbs_scale_draft");
         if (raw) {
-          const saved = JSON.parse(raw) as Record<string, Answer[]>;
-          const savedCount = Object.values(saved).reduce(
-            (s, a) => s + a.length,
-            0,
-          );
-          if (savedCount > 0) {
-            setAnswers(saved);
-            setStage("quiz");
+          const saved = restoreScaleDraft(JSON.parse(raw));
+          if (saved) {
+            setAnswers(saved.answers);
+            setCurrentPillar(saved.pillarIndex);
+            setCurrentQuestion(saved.questionIndex);
+            setStage(saved.complete ? "lead" : "quiz");
             track.assessmentFunnelStep("SCALE", "draft_restored");
           }
         }
