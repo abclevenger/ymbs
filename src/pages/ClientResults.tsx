@@ -222,11 +222,9 @@ export default function ClientResults() {
                 </p>
               </div>
               <div className="grid md:grid-cols-3 gap-6">
-                {VERIFIED_TESTIMONIALS.filter((t) => t.verified).map(
-                  (t, i) => (
-                    <Testimonial key={i} data={t} variant="light" />
-                  ),
-                )}
+                {VERIFIED_TESTIMONIALS.filter((t) => t.verified).map((t, i) => (
+                  <Testimonial key={i} data={t} variant="light" />
+                ))}
               </div>
             </div>
           </section>
