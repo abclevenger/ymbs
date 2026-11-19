@@ -143,7 +143,7 @@ export function Footer() {
 
               <li>
                 <a href={mainSiteHref("/support")} className="hover:text-primary">
-                  Client Portal
+                  Help Center
                 </a>
               </li>
             </ul>
