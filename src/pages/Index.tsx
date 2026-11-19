@@ -6,6 +6,7 @@ import FractionalModel from "@/components/home/FractionalModel";
 import BusinessTransformationStory from "@/components/home/BusinessTransformationStory";
 import FourDisciplines from "@/components/home/FourDisciplines";
 import { HomepageProofStrip } from "@/components/proof/HomepageProof";
+import ClientsBar from "@/components/home/ClientsBar";
 import WhoWeServe from "@/components/home/WhoWeServe";
 import ProblemDiscovery from "@/components/home/ProblemDiscovery";
 import HowWeWork from "@/components/home/HowWeWork";
@@ -38,6 +39,7 @@ export default function Index() {
       <BusinessTransformationStory />
       <FourDisciplines />
       <HomepageProofStrip variant="light" />
+      <ClientsBar />
       <WhoWeServe />
       <ProblemDiscovery />
       <MountainDivider orientation="light-to-dark" />

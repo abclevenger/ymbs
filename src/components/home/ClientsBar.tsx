@@ -1,0 +1,81 @@
+import { Link } from "react-router-dom";
+
+/* =========================================================================
+ *  ClientsBar
+ *
+ *  A compact, editorial client-logo strip that reinforces credibility
+ *  without inventing claims. Logos link to /client-results where verified
+ *  experience and deliverables are shown. Uses YMBS design tokens only.
+ *  ========================================================================= */
+
+const CLIENTS = [
+  {
+    name: "GreenBuilt Alliance",
+    src: "https://files.leadconnectorhq.com/file/68aa7400aca9cd4aa1c27e9f/greenbuiltalliance-logo-horizontal-1.webp",
+    alt: "GreenBuilt Alliance logo",
+  },
+  {
+    name: "LearningGate Charter",
+    src: "https://files.leadconnectorhq.com/file/68aa744abfc2773c724f0c81/learninggate-charter-logo-1.png",
+    alt: "LearningGate Charter logo",
+  },
+  {
+    name: "LaBelle",
+    src: "https://files.leadconnectorhq.com/file/68aa749644664f37d4f5db94/labelle-logo.png",
+    alt: "LaBelle logo",
+  },
+  {
+    name: "Untitled Design",
+    src: "https://files.leadconnectorhq.com/file/68aa75a344664f41ddf5f3bd/untitled-design-68.png",
+    alt: "Untitled Design logo",
+  },
+] as const;
+
+export default function ClientsBar() {
+  return (
+    <section
+      className="py-10 md:py-14 bg-[hsl(var(--brand-warm))]"
+      aria-label="Organizations we have supported"
+      aria-labelledby="clients-bar-heading"
+    >
+      <div className="max-w-[1280px] mx-auto px-6">
+        <p
+          id="clients-bar-heading"
+          className="text-center text-xs font-bold tracking-[0.2em] uppercase text-[hsl(var(--muted-foreground))] mb-7"
+        >
+          Organizations We&rsquo;ve Supported
+        </p>
+        <Link
+          to="/client-results"
+          className="block group"
+          aria-label="View verified experience and deliverables"
+        >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 items-center justify-items-center">
+            {CLIENTS.map((client) => (
+              <div
+                key={client.name}
+                className="flex items-center justify-center h-16 md:h-20 w-full max-w-[220px] transition-opacity duration-200 group-hover:opacity-70"
+              >
+                <img
+                  src={client.src}
+                  alt={client.alt}
+                  loading="lazy"
+                  className="max-h-full max-w-full object-contain opacity-75 group-hover:opacity-100 transition-opacity duration-200"
+                />
+              </div>
+            ))}
+          </div>
+        </Link>
+        <p className="text-center text-xs text-[hsl(var(--muted-foreground))] mt-6 max-w-xl mx-auto">
+          Representative experience from across the YMBS team.{" "}
+          <Link
+            to="/client-results"
+            className="font-bold text-[hsl(var(--primary))] hover:underline"
+          >
+            View Experience &amp; Deliverables
+          </Link>
+        </p>
+      </div>
+    </section>
+  );
+}
