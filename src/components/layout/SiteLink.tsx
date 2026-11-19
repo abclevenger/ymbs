@@ -8,10 +8,16 @@ export function isBlogSubdomain(): boolean {
   return typeof window !== "undefined" && window.location.hostname === "blog.ymbs.pro";
 }
 
-export function mainSiteHref(path: string): string {
-  return isBlogSubdomain() && path.startsWith("/")
+/** Pure route helper: blog navigation resolves to the canonical YMBS domain. */
+export function resolveSiteHref(path: string, hostname: string): string {
+  return hostname === "blog.ymbs.pro" && path.startsWith("/")
     ? `${MAIN_SITE}${path}`
     : path;
+}
+
+export function mainSiteHref(path: string): string {
+  const host = typeof window === "undefined" ? "" : window.location.hostname;
+  return resolveSiteHref(path, host);
 }
 
 /**
