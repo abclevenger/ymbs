@@ -1,6 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-
 export function Footer() {
   return (
     <footer className="bg-[#0B1D33] pt-10 pb-6 border-t border-[#D4A017]/20 text-white">
@@ -26,22 +23,7 @@ export function Footer() {
                 className="w-full h-auto object-contain"
               />
             </div>
-            {/* Newsletter inline in brand column */}
-            <div className="pt-2">
-              <p className="text-xs text-white/70 font-semibold mb-1.5">
-                Stay Connected
-              </p>
-              <div className="flex gap-2">
-                <Input
-                  type="email"
-                  placeholder="Enter Email Here*"
-                  className="bg-white/10 text-white border-white/20 placeholder:text-white/40 h-8 text-xs"
-                />
-                <Button className="bg-primary text-black hover:bg-primary/90 h-8 text-xs px-3">
-                  Join
-                </Button>
-              </div>
-            </div>
+
           </div>
 
           {/* Company */}
@@ -80,6 +62,11 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-3 text-white text-sm">Who We Help</h4>
             <ul className="space-y-1.5 text-xs text-white/60">
+              <li>
+                <a href="/services" className="hover:text-primary">
+                  Small & Mid-Sized Businesses
+                </a>
+              </li>
               <li>
                 <a href="/nonprofit-consulting" className="hover:text-primary">
                   Nonprofits
@@ -174,11 +161,7 @@ export function Footer() {
                   SCALE&trade; Assessment
                 </a>
               </li>
-              <li>
-                <a href="/contact" className="hover:text-primary">
-                  Contact
-                </a>
-              </li>
+
               <li>
                 <a href="/support" className="hover:text-primary">
                   Client Portal
