@@ -44,6 +44,11 @@ const CLIENTS = [
     src: "https://files.leadconnectorhq.com/file/6aff7594cad0c906333a1e46/6a8713ffc1e1ff9023f5b52c-1.svg",
     alt: "Asheville logo",
   },
+  {
+    name: "YMBS Partner",
+    src: "https://files.leadconnectorhq.com/file/6aff75f19463e812543c42dd/bf9672d7-b887-4a14-8943-209b13cc99db.png",
+    alt: "YMBS Partner logo",
+  },
 ] as const;
 
 export default function ClientsBar() {
@@ -65,7 +70,7 @@ export default function ClientsBar() {
           className="block group"
           aria-label="View verified experience and deliverables"
         >
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-5 md:gap-7 items-center justify-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-5 md:gap-7 items-center justify-items-center">
             {CLIENTS.map((client) => (
               <div
                 key={client.name}
