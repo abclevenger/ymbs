@@ -34,11 +34,6 @@ const CLIENTS = [
     alt: "LaBelle logo",
   },
   {
-    name: "Untitled Design",
-    src: "https://files.leadconnectorhq.com/file/68aa75a344664f41ddf5f3bd/untitled-design-68.png",
-    alt: "Untitled Design logo",
-  },
-  {
     name: "John T. Floyd",
     src: "https://files.leadconnectorhq.com/file/6aff7520d50d9db796040be1/john-t-floyd-logo.png",
     alt: "John T. Floyd logo",
