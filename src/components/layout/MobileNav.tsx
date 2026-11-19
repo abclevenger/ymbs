@@ -266,7 +266,7 @@ export function MobileNav() {
                 to="/support"
                 className="text-base text-white/80 hover:text-primary transition-colors"
               >
-                Client Portal
+                Help Center
               </Link>
             </SheetClose>
             <a
@@ -275,7 +275,7 @@ export function MobileNav() {
               rel="noopener noreferrer"
               className="text-base text-white/80 hover:text-primary transition-colors"
             >
-              Elevation Login
+              Elevation Sign-In
             </a>
             <SheetClose asChild>
               <Link
