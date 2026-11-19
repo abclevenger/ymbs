@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { stages, disciplines, scaleMarkers } from "./storyStages";
 import {
   stageVis,
@@ -25,13 +25,6 @@ export default function BusinessTransformationStory() {
   const sectionRef = useRef<HTMLElement>(null);
   const { progress, p, reduced, small, currentStage, goToChapter } =
     useStoryProgress(sectionRef);
-  const [interactive, setInteractive] = useState(false);
-
-  const interactiveNow = !reduced && p >= 0.88;
-  useEffect(() => {
-    setInteractive(interactiveNow);
-  }, [interactiveNow]);
-
   return (
     <section
       ref={sectionRef}
