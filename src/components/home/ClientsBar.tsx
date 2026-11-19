@@ -29,6 +29,11 @@ const CLIENTS = [
     src: "https://files.leadconnectorhq.com/file/68aa75a344664f41ddf5f3bd/untitled-design-68.png",
     alt: "Untitled Design logo",
   },
+  {
+    name: "John T. Floyd",
+    src: "https://files.leadconnectorhq.com/file/6aff7520d50d9db796040be1/john-t-floyd-logo.png",
+    alt: "John T. Floyd logo",
+  },
 ] as const;
 
 export default function ClientsBar() {
@@ -50,7 +55,7 @@ export default function ClientsBar() {
           className="block group"
           aria-label="View verified experience and deliverables"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 items-center justify-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 md:gap-10 items-center justify-items-center">
             {CLIENTS.map((client) => (
               <div
                 key={client.name}
