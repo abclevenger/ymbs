@@ -15,8 +15,8 @@ describe("YMBS flexible expertise messaging", () => {
   });
 
   it("presents the explanation on desktop and mobile", () => {
-    expect(hero.match(/proofPoints.map\\(\\(\\{ icon: Icon, label, detail \\}\\)/g)).toHaveLength(2);
-    expect(hero.match(/\\{detail &&/g)).toHaveLength(2);
+    expect(hero.split("proofPoints.map(({ icon: Icon, label, detail }) => (").length - 1).toBe(2);
+    expect(hero.split("{detail &&").length - 1).toBe(2);
   });
 
   it("avoids unverified guarantees that YMBS has already fixed client problems", () => {
