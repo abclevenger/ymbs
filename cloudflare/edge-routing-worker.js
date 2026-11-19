@@ -170,6 +170,10 @@ const staticAssetExtensions = [
   ".pdf",
 ];
 
+// Platform-owned paths must not be mistaken for public SPA pages.
+// Keep these requests routed to the origin without modification.
+const runtimePathPrefixes = ["/__vibe/", "/cdn-cgi/", "/.well-known/"];
+
 // ─── Helpers ───
 function normalize(pathname) {
   return pathname.replace(/\/+$/, "") || "/";
@@ -211,8 +215,16 @@ export default {
     const url = new URL(request.url);
     const pathname = url.pathname;
 
-    // 1. Static assets → always pass through to origin (preserve caching)
-    if (isStaticAsset(pathname)) {
+    // Preserve non-page methods (API submissions and preflight requests).
+    if (request.method !== "GET" && request.method !== "HEAD") {
+      return fetch(request);
+    }
+
+    // Platform runtime, verification endpoints and static assets bypass the SPA router.
+    if (
+      runtimePathPrefixes.some((prefix) => pathname.startsWith(prefix)) ||
+      isStaticAsset(pathname)
+    ) {
       return fetch(request);
     }
 
