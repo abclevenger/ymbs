@@ -6,7 +6,16 @@ import { Link } from "react-router-dom";
  *  A compact, editorial client-logo strip that reinforces credibility
  *  without inventing claims. Logos link to /client-results where verified
  *  experience and deliverables are shown. Uses YMBS design tokens only.
- *  ========================================================================= */
+ *
+ *  Layout notes:
+ *  - Desktop: 4 columns × 2 rows so each logo gets ample width to be
+ *    recognizable (avoids squeezing 8 logos into one narrow row).
+ *  - Tablet: 4 columns.
+ *  - Mobile: 2 columns with generous image space.
+ *  - Each logo sits in a consistent light card with subtle border/shadow
+ *    so light-colored logos remain visible against the cream section.
+ *  - object-contain preserves every logo's aspect ratio (no stretch/crop).
+ * ========================================================================= */
 
 const CLIENTS = [
   {
@@ -54,14 +63,14 @@ const CLIENTS = [
 export default function ClientsBar() {
   return (
     <section
-      className="py-10 md:py-14 bg-[hsl(var(--brand-warm))]"
+      className="py-12 md:py-16 bg-[hsl(var(--brand-warm))]"
       aria-label="Organizations we have supported"
       aria-labelledby="clients-bar-heading"
     >
       <div className="max-w-[1280px] mx-auto px-6">
         <p
           id="clients-bar-heading"
-          className="text-center text-xs font-bold tracking-[0.2em] uppercase text-[hsl(var(--muted-foreground))] mb-7"
+          className="text-center text-xs font-bold tracking-[0.2em] uppercase text-[hsl(var(--muted-foreground))] mb-8"
         >
           Organizations We&rsquo;ve Supported
         </p>
@@ -70,29 +79,31 @@ export default function ClientsBar() {
           className="block group"
           aria-label="View verified experience and deliverables"
         >
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-5 md:gap-7 items-center justify-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 md:gap-6 items-stretch justify-items-center">
             {CLIENTS.map((client) => (
               <div
                 key={client.name}
-                className="flex items-center justify-center h-16 md:h-20 w-full max-w-[220px] rounded-lg bg-white/80 border border-black/5 shadow-sm px-3 transition-opacity duration-200 group-hover:opacity-70"
+                className="flex items-center justify-center h-24 sm:h-28 md:h-32 w-full rounded-xl bg-white border border-black/5 shadow-sm px-5 md:px-7 transition-all duration-200 group-hover:opacity-80 group-hover:shadow-md"
               >
                 <img
                   src={client.src}
                   alt={client.alt}
                   loading="lazy"
-                  className="max-h-full max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-200"
+                  width={220}
+                  height={120}
+                  className="max-h-full max-w-full object-contain"
                 />
               </div>
             ))}
           </div>
         </Link>
-        <p className="text-center text-xs text-[hsl(var(--muted-foreground))] mt-6 max-w-xl mx-auto">
+        <p className="text-center text-xs text-[hsl(var(--muted-foreground))] mt-7 max-w-xl mx-auto">
           Representative experience from across the YMBS team.{" "}
           <Link
             to="/client-results"
             className="font-bold text-[hsl(var(--primary))] hover:underline"
           >
-            View Experience &amp; Deliverables
+            View Experience & Deliverables
           </Link>
         </p>
       </div>
