@@ -256,8 +256,8 @@ describe("Route Sync — Deployed Cloudflare Worker source", () => {
     return (match?.[1].match(/["']([^"']+)["']/g) ?? []).map((v) => v.slice(1, -1));
   };
   const extractRedirects = (): Record<string, string> => {
-    const body = source.match(/const legacyRedirects = \\{([\\s\\S]*?)\\n\\};/)?.[1] ?? "";
-    const entries = [...body.matchAll(/["']([^"']+)["']\\s*:\\s*["']([^"']+)["']/g)];
+    const body = source.match(/const legacyRedirects = \{([\s\S]*?)\n\};/)?.[1] ?? "";
+    const entries = [...body.matchAll(/["']([^"']+)["']\s*:\s*["']([^"']+)["']/g)];
     return Object.fromEntries(entries.map(([, key, value]) => [key, value]));
   };
 
