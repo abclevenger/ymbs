@@ -160,7 +160,7 @@ export const howWeWork = [
 
 export const aboutLinks = [
   { title: "Team", href: "/team" },
-  { title: "Client Results", href: "/client-results" },
+  { title: "Experience & Deliverables", href: "/client-results" },
   { title: "Company Profile", href: "/company-profile" },
   { title: "SCALE™ Methodology", href: "/scale" },
   { title: "Partner Network", href: "/partners" },
