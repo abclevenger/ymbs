@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { stages } from "./storyStages";
 
-const CHAPTER_TARGET = [0.06, 0.38, 0.64, 0.97];
+const CHAPTER_TARGET = [0.05, 0.34, 0.58, 0.95];
 
 const clamp = (v: number, min = 0, max = 1) => Math.min(max, Math.max(min, v));
 

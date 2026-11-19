@@ -35,7 +35,7 @@ export default function BusinessTransformationStory() {
   return (
     <section
       ref={sectionRef}
-      className={`relative bg-dark-section ${reduced ? "" : "h-[280vh] lg:h-[340vh]"}`}
+      className={`relative bg-dark-section ${reduced ? "" : "h-[200vh] lg:h-[240vh]"}`}
       aria-labelledby="transformation-story-heading"
     >
       {/* Full narrative for screen readers and search engines */}

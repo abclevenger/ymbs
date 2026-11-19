@@ -46,7 +46,7 @@ export const SCALE_ANGLES = [-81, -9, 63, 135, 207].map(
 );
 
 /** Scroll targets for the chapter dots (normalized progress). */
-export const CHAPTER_TARGET = [0.06, 0.38, 0.64, 0.97];
+export const CHAPTER_TARGET = [0.05, 0.34, 0.58, 0.95];
 
 /** Pressure nodes — appear during "growth creates chaos" beat, then dissolve. */
 export const strainNodes = [
